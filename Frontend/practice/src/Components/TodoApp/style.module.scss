@@ -1,0 +1,22 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+.main {
+  margin-top: 60.42px;
+  height: calc(100vh - 60.41px);
+  padding: $padtop;
+  width: 100%;
+  background: $bgquizero;
+
+  position: relative;
+  .nav {
+    @include flex(column, flex-start, center);
+
+    margin-top: 60.42px;
+    background-color: $bgquizero;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0%;
+    z-index: 1;
+  }
+}

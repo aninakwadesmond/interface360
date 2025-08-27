@@ -1,0 +1,259 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+* {
+  font-size: 100%;
+}
+.blog {
+  margin-top: 58.21px;
+  width: 100vw;
+  height: calc(100vh - 58.21px);
+  position: relative;
+  @include grid(repeat(2, 1fr), 0rem);
+  @include newsBlog(gridBody) {
+    @include grid(1fr 3fr, 0rem);
+  }
+  @include newsBlog(phone) {
+    @include grid(1fr 5fr, 0rem);
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(104, 55, 218, 0.671),
+        rgba(90, 44, 143, 0.658)
+      ),
+      url('../../../public/images/car4.jpg');
+    object-fit: cover;
+    background-repeat: no-repeat;
+  }
+  .create {
+    @include flex(column, center, center, center);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgb(41, 26, 58),
+      rgba(44, 42, 48, 0.849)
+    );
+    position: relative;
+    .back {
+      cursor: pointer;
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      & > span {
+        @include newsBlog(phone) {
+          font-size: 1.5rem;
+        }
+      }
+
+      font-size: $font-size-small;
+      font-weight: bold;
+      a {
+        @include flex(row, center, flex-start, _, 1rem);
+        color: #fff;
+      }
+    }
+  }
+  .button {
+    width: 70%;
+    padding: $padtop;
+    @include newsBlog(gridBody) {
+      width: 80%;
+      padding: $input-padding;
+    }
+  }
+  .imageCenter {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+
+    @include newsBlog(phone) {
+      width: 4rem;
+    }
+    img {
+      @include yourRoundedImage();
+      position: relative;
+    }
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background: conic-gradient(
+        from var(--angle),
+        transparent 40%,
+        rgba(47, 47, 235, 0.719)
+      );
+      @include yourRoundedImage();
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      padding: $gradient-padding;
+
+      animation: 2s spin linear infinite;
+    }
+    &::before {
+      filter: blur(1.2rem);
+      opacity: 0.5rem;
+    }
+    @keyframes spin {
+      0% {
+        --angle: 0deg;
+      }
+      20% {
+        --angle: 50deg;
+      }
+      50% {
+        --angle: 150deg;
+      }
+      75% {
+        --angle: 250deg;
+      }
+      85% {
+        -angle: 300deg;
+      }
+      100% {
+        --angle: 360deg;
+      }
+    }
+  }
+}
+
+.blogStyle {
+  padding: $small-padding;
+  border-radius: $border-radius-small;
+  display: block;
+  width: 100%;
+  padding: $padtop;
+  background: linear-gradient(
+    to right,
+    rgba(219, 211, 211, 0.829),
+    rgba(228, 222, 230, 0.959)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: $font-size-small;
+
+  @include newsBlog(phone) {
+    padding: $small-padding;
+    font-size: $font-meduim-small;
+  }
+}
+
+.addPost {
+  width: 90%;
+  @include flex(column, center, center, _, 3rem);
+  @include newsBlog(phone) {
+    width: 95%;
+  }
+  .header {
+    font-size: $font-main-header;
+    font-weight: bold;
+    background: linear-gradient(to right, rgb(47, 4, 97), rgb(29, 2, 61));
+    letter-spacing: 1px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include newsBlog(tablet) {
+      font-size: 2rem;
+    }
+  }
+  .setImage {
+    width: 70%;
+    @include flex(row, center, space-between);
+    font-size: $font-size-small;
+    & > * {
+      font-size: 70%;
+    }
+    .imageUpload {
+      cursor: pointer;
+      position: relative;
+      // s
+      .input {
+        display: none;
+        visibility: hidden;
+      }
+      // .icon {
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 20%;
+      //   transform: translateY(-50%);
+      // }
+    }
+  }
+  .title {
+    width: 70%;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      padding-bottom: 0.75rem;
+
+      transform: translate(-50%, -50%);
+      background: linear-gradient(to left, red, yellow);
+      width: 100%;
+      height: 100%;
+    }
+    input {
+      width: 100%;
+      @include Input();
+      background: none;
+      padding: $input-padding;
+      border-radius: 0px;
+      color: #ffffffb0;
+      // border-bottom: 2px solid;
+    }
+    .textArea {
+      width: 100%;
+      height: 10rem;
+      resize: none;
+      background: none;
+      border: none;
+      outline: none;
+      padding: $input-padding;
+      color: #ffffffb0;
+    }
+  }
+}
+.loadImage {
+  width: 10rem;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.submit {
+  cursor: pointer;
+  border: none;
+  background: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: $rounded-border;
+  background: linear-gradient(
+    to right,
+    rgb(74, 106, 175),
+    rgba(14, 47, 117, 0.938)
+  );
+}

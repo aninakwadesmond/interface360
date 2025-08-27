@@ -1,0 +1,7 @@
+@import '../../Sass/mixins';
+.button {
+  @include button2();
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+}

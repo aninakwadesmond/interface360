@@ -1,0 +1,71 @@
+@import '../../Sass/mixins';
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   left: 0;
+//   bottom: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   @include overlay;
+// }
+.container {
+  .close {
+    @include closeButtonClick();
+  }
+
+  @include flex(column, flex-start, center, _, 2rem);
+  background-color: blue;
+  // width: 80vw;
+  border-radius: $border-radius-small;
+  padding: $padtop;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  @include newsBlog(tablet) {
+    width: 80%;
+  }
+  @include newsBlog(phone) {
+    width: 90%;
+  }
+  .content {
+    width: 95%;
+    margin: 0 auto;
+
+    @include flex(row, center, flex-start, _, 2rem);
+
+    div {
+      width: 8%;
+      img {
+        @include yourRoundedImage;
+      }
+    }
+    .textPricing {
+      width: 50%;
+      p {
+        font-size: $font-size-very-small;
+      }
+      .price {
+        font-weight: bold;
+      }
+    }
+    button {
+      margin-left: auto;
+      margin-right: 10px;
+      cursor: pointer;
+      background: none;
+      @include closeButton(_, 2rem);
+    }
+  }
+  .priceTag {
+    width: 100%;
+    @include flex(row, center, flex-end, _, 2rem);
+    font-size: $font-size-very-small;
+    .total {
+      font-weight: bold;
+    }
+  }
+}

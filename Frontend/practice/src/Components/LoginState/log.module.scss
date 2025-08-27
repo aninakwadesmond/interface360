@@ -1,0 +1,42 @@
+@import '../../Sass/mixins';
+.state {
+  position: absolute;
+  z-index: 100000;
+  // height: 6rem;
+  padding: $input-padding;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: green;
+  border-radius: $input-padding;
+
+  font-weight: bold;
+  animation: dropdown 2s linear;
+  & {
+    @keyframes dropdown {
+      0% {
+        // transform: translate(50%, -10%);
+        top: -10%;
+      }
+      30% {
+        // transform: translate(50%, 0%);
+        top: 0%;
+      }
+      60% {
+        // transform: translate(50%, 5%);
+        top: 4%;
+      }
+      100% {
+        // transform: translate(50%, 2%);
+        top: 2%;
+      }
+    }
+  }
+
+  .contain {
+    letter-spacing: 1.2px;
+    font-size: 1.1rem;
+    @include flex(column, center, center, center);
+    color: #ffffffce;
+  }
+}

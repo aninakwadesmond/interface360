@@ -1,0 +1,57 @@
+@import '../../Sass/mixins';
+.nav {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+  width: 100vw;
+  font-size: 2rem;
+  padding: $input-padding;
+  background: linear-gradient(
+    to right,
+    rgba(111, 89, 89, 0.745),
+    rgba(111, 89, 89, 0.904)
+  );
+  @include flex(row, center, center, _, 1rem);
+  .logo {
+    width: 4rem;
+    margin-right: auto;
+    p {
+      @include fullImage;
+      img {
+        @include roundImage;
+      }
+    }
+  }
+  .navPage {
+    width: 50%;
+    .menuItems {
+      display: block;
+      @include flex(row, center, space-between);
+      @include newsBlog(gridBody) {
+        display: none;
+        position: absolute;
+        top: 44px;
+        right: -100%;
+        transform: translateX(-40%);
+        width: 30%;
+        padding: $input-padding;
+        @include flex(column, flex-start, center, _, 2rem);
+        background-color: rgba(255, 255, 255, 0.822);
+        z-index: 2;
+        transition: all 1s;
+      }
+    }
+    .menu {
+      display: none;
+      @include newsBlog(gridBody) {
+        @include flex(row, center, flex-end);
+      }
+    }
+  }
+}
+
+.active {
+  color: rgba(84, 206, 84, 0.89);
+  border-bottom: 1px solid rgba(40, 163, 40, 0.836);
+}

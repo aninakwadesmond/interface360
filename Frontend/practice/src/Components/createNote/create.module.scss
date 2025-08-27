@@ -1,0 +1,66 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+
+.create {
+  background: $bgquizero;
+  width: 95%;
+  @include flex(row, center, space-between, _, 1rem);
+  flex-wrap: wrap;
+  @include newsBlog(phone) {
+    // flex-wrap: nowrap;
+  }
+  padding: 1.5rem;
+  position: relative;
+  .mainInput {
+    width: 60%;
+    @include flex(row, center, flex-start, _, 1rem);
+    @include newsBlog(tablet) {
+      width: 100%;
+    }
+    .text {
+      width: 97%;
+      height: 4rem;
+      @include newsBlog(gridBody) {
+        height: 2.5rem;
+      }
+      & > * {
+        height: 100%;
+        font-size: $font-size-small;
+      }
+      input {
+        width: 100%;
+        font-size: $font-size-very-small;
+        color: #fff;
+        letter-spacing: 1.2px;
+        outline: 1px solid #ffffffc5;
+      }
+    }
+    span {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.field {
+  @include field();
+  outline: 1px solid #ffffffc5;
+  @include newsBlog(phone) {
+    width: 70%;
+  }
+}
+.but {
+  position: absolute;
+  right: -5%;
+  top: 70%;
+  font-size: 1.3rem;
+  transform: translateY(-50%);
+}
+
+.source,
+.chose {
+  @include newsBlog(phone) {
+    width: 50%;
+  }
+}

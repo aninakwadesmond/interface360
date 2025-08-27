@@ -1,0 +1,107 @@
+@import '../../Sass/mixins.scss';
+@import '../../Sass/variable.scss';
+.Navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  @include flex(row, center, space-between);
+  background-color: rgba(192, 192, 192, 0.95);
+  padding: $medium-padding;
+  @include newsBlog(tablet) {
+    // justify-content: flex-start;
+    // gap: 2rem;
+  }
+  .logo {
+    width: 8rem;
+    @include newsBlog(tablet) {
+      width: 4rem;
+    }
+    img {
+      @include roundImage;
+    }
+  }
+  .input {
+    width: 50%;
+    @include newsBlog(verySmall) {
+      margin-left: -3rem;
+    }
+    input {
+      width: 100%;
+      border-radius: $rounded-border;
+      @include setInput;
+      border: 2px solid black;
+      &:active {
+        border: 2px solid black;
+      }
+    }
+  }
+  .sort {
+    width: 5rem;
+    @include newsBlog(tablet) {
+      // // width: 4rem;
+      // margin-left: auto;
+    }
+
+    .select {
+      width: 10rem;
+      height: 100%;
+      margin-left: 5rem;
+      @include newsBlog(phone) {
+        width: 7rem;
+        margin-left: 7rem;
+      }
+      select {
+        width: 100%;
+        margin-left: -10rem;
+        display: inline-block;
+        padding: $small-meduim-padding;
+        font-size: $font-size-very-small;
+        border-radius: $rounded-border;
+        border: none;
+        @include newsBlog(tablet) {
+          margin-left: -9rem;
+          display: block;
+        }
+        // background-color: red;
+      }
+    }
+    div {
+      cursor: pointer;
+      position: relative;
+
+      .itemsInChart {
+        position: absolute;
+        display: inline-block;
+        top: -20%;
+        right: -5%;
+        background-color: red;
+        padding: $small-meduim-padding;
+        border-radius: 50%;
+        color: #fff;
+        font-size: $font-size-very-small;
+        font-weight: bold;
+        @include newsBlog(gridBody) {
+          font-size: 0.7rem;
+          padding: 0.8rem;
+        }
+        // @include yourRoundedImage(30%, 30%);
+      }
+      // &::after{
+      //   content: '';
+      //   position: absolute; top:-5%; right: -5%; width:10%; height: 10;
+      // }
+    }
+    .cart {
+      width: 100%;
+      @include newsBlog(gridBody) {
+        width: 4rem;
+      }
+
+      img {
+        @include yourRoundedImage();
+      }
+    }
+  }
+}

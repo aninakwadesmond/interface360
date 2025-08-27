@@ -1,0 +1,44 @@
+@import '../../Sass/mixins';
+.message {
+  // width: 75%;
+  @include newsBlog(tablet) {
+    width: 80%;
+  }
+  @include newsBlog(phone) {
+    width: 90%;
+  }
+
+  .button {
+    @include closeButtonClick();
+  }
+  @include positionAbsolute();
+  @include flex(column, flex-start, center, _, 2.2rem);
+  padding: $big-padding;
+  border-radius: $border-radius-small;
+  .emailName {
+    width: 100%;
+    @include flex(row, center, space-between, _, 2rem);
+    div {
+      @include flex(row, center, flex-start, _, 0.5rem);
+      width: 100%;
+      label {
+        font-size: $font-size-very-small;
+      }
+      input {
+        @include Input;
+        width: 100%;
+      }
+    }
+  }
+  .textarea {
+    width: 100%;
+    textarea {
+      width: 100%;
+      height: 40vh;
+      resize: none;
+      padding: $big-padding;
+      border: none;
+      outline: none;
+    }
+  }
+}

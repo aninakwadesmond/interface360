@@ -1,0 +1,8 @@
+@import '../../Sass/mixins.scss';
+
+.main {
+  @include flex(row, _, flex-end);
+  position: relative;
+  height: 100vh;
+  // margin-top: 87rem;
+}

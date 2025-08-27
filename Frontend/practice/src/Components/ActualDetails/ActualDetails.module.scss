@@ -1,0 +1,77 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+
+.detailed {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: $padtop;
+  padding-bottom: 2rem;
+  @include flex(column, flex-start, center, _, 2rem);
+  @include newsBlog(gridBody) {
+    width: 90%;
+  }
+  .image {
+    @include fullImage;
+    img {
+      @include fullImage;
+    }
+  }
+  .imagesContainer {
+    width: 100%;
+    overflow: hidden;
+    @include flex(row, center, flex-start, _, 1rem);
+    flex-basis: auto;
+    position: relative;
+
+    img,
+    .img {
+      width: 18.5%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .imageMove,
+    .imageMoveLeft {
+      position: absolute;
+      top: 50%;
+      color: black;
+
+      opacity: 0.5;
+
+      transform: translateY(-50%);
+      @include yourRoundedImage(10%, 40%);
+      cursor: pointer; // @include roundImage();
+    }
+    .imageMoveLeft {
+      left: 1%;
+    }
+    .imageMove {
+      right: 1%;
+    }
+  }
+  .starCount {
+    width: 100%;
+    @include flex(column, center, center, _, 2rem);
+    padding: $padtop;
+
+    border-radius: $border-radius-small;
+    background-color: silver;
+    //  @include newsBlog(tablet) {
+    //   height: 100%;
+    // }
+    // .addChart {
+    //   width: 90%;
+    //   margin: 0 auto;
+    //   border-radius: $border-radius-small;
+    //   background-color: blue;
+    //   color: white;
+    //   font-size: $font-size-very-small;
+    //   padding: $small-padding;
+    //   text-align: center;
+    //   cursor: pointer;
+    // }
+  }
+}
+
+//  {/* {Array.from({ length: 10 }, (_, i) => i).map((index) => (
+//           <Image number={index} />
+//         ))} */}

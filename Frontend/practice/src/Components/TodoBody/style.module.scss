@@ -1,0 +1,54 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+.bodyGrid {
+  width: 100vw;
+  position: relative;
+
+  height: 100%;
+  margin-left: -2rem; // margin-top: 142px;
+  // display: grid;
+  // grid-template-columns: 1fr minmax(4fr, 7fr);
+  .side {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    background: $bgquizero;
+    width: 30%;
+    height: 100vh;
+    padding: 1rem;
+    @include flex(column, center, flex-start, _, 2rem);
+    @include newsBlog(tablet) {
+      font-size: 1.1rem;
+      font-weight: bold;
+      width: 100vw;
+      height: auto;
+      overflow-x: auto;
+      @include flex(row, center, flex-start, _, 1rem);
+    }
+    padding-top: $padtop;
+    .button {
+      width: 50%;
+    }
+    // grid-row: 1 / span 3;
+  }
+  .sideTop {
+    top: 32%;
+  }
+  .content {
+    width: 88%;
+    background: $bgquizero;
+    margin-left: 30%;
+    @include flex(column, flex-start, center, _, 2rem);
+    // background-color: red;
+    padding: 0.5rem;
+    overflow-y: scroll;
+    grid-row: 1/-1;
+    @include newsBlog(tablet) {
+      width: 100%;
+      margin-left: 0%;
+    }
+  }
+}
+.magTop {
+  margin-top: 83px;
+}

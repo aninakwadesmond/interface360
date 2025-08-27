@@ -1,0 +1,9 @@
+@import '../../Sass/mixins';
+.pagContainer {
+  width: 100vw;
+  height: 10rem;
+  @include flex(column, center, flex-start, center);
+  .pagination {
+    @include flex(row, center, flex-start, _, 1rem);
+  }
+}

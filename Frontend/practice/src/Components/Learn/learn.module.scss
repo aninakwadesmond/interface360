@@ -1,0 +1,60 @@
+@import '../../Sass/mixins';
+.text {
+  font-size: 1.3rem;
+  width: 78%;
+  @include newsBlog(tablet) {
+    width: 100%;
+    height: auto;
+  }
+  @include flex(row, center, space-between);
+  padding: $input-padding;
+  border-radius: 10px;
+  background-color: rgb(112, 109, 109);
+  .content {
+    @include flex(row, center, flex-start, _, 1rem);
+    @include newsBlog(tablet) {
+      width: 70%;
+    }
+    @include newsBlog(phone) {
+      width: 75%;
+      font-size: 1.2rem;
+      letter-spacing: 1.2px;
+    }
+    .body {
+      // border-radius: 10px;
+      padding: $input-padding;
+
+      p {
+        letter-spacing: 1.1px;
+        font-size: 1.6rem;
+        color: #e4e1e1;
+        // font-weight: bold;
+        @include newsBlog(tablet) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .likes {
+    // width: 45%;
+    @include flex(row, center, flex-start, _, 1rem);
+    // @include newsBlog(phone) {
+    //   @include flex(column, flex-end, center, _, 0.5rem);
+    // }
+    .like {
+      @include flex(row, center, flex-start, _, 1rem);
+      font-size: 1rem;
+      padding: $small-padding;
+      border-radius: $rounded-border;
+      background-color: silver;
+    }
+  }
+}
+
+.type {
+  padding-right: 1rem;
+  @include newsBlog(tablet) {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+}

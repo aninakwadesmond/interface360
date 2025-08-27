@@ -1,0 +1,17 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+.error {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, rgb(100, 83, 83), rgb(54, 53, 53));
+  @include flex(column, center, center, center);
+  .message {
+    // margin: 0 auto;
+    // width: 60%;
+    color: #ffffffb2;
+    font-size: $font-size-small;
+    h2 {
+      font-weight: bold;
+    }
+  }
+}

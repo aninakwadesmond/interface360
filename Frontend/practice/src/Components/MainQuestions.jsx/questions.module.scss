@@ -1,0 +1,225 @@
+@import '../../Sass/mixins';
+.parent {
+  padding: $padtop;
+  // @include coverViewport();
+  width: 100vw;
+  padding-top: 102px;
+  height: 100vh;
+  @include flex(column, center, center, center, 2rem);
+  position: relative;
+  .header {
+    width: 100%;
+    height: 10%;
+    @include flex(row, center, space-between);
+    @include boldHeader();
+    @include newsBlog(gridBody) {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    @include newsBlog(tablet) {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .progress {
+      @include flex(column, flex-start, center, _, 1rem);
+      width: 20%;
+      @include newsBlog(phone) {
+        width: 40%;
+      }
+      height: 100%;
+      .progressInfo {
+        width: 100%;
+        @include flex(row, center, flex-start, _, 2rem);
+        span {
+          font-size: $font-size-very-small;
+          @include newsBlog(gridBody) {
+            font-size: 0.8rem;
+            font-weight: bold;
+          }
+        }
+        .progressbar {
+          // @include fullImage();
+          border-radius: $rounded-border;
+          background-color: silver;
+          height: 40%;
+          width: 80%;
+          .progressIn {
+            border-radius: $rounded-border;
+            height: 100%;
+            transition: all 0.3s;
+
+            background: linear-gradient(
+              to right,
+              rgb(233, 94, 186),
+              rgb(233, 57, 174)
+            );
+          }
+        }
+      }
+      .number {
+        width: 100%;
+        font-size: $font-size-very-small;
+        text-align: center;
+        @include newsBlog(gridBody) {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        @include newsBlog(tablet) {
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .body {
+    padding: $input-padding;
+    width: 90vw;
+    height: 60vh;
+    @include flex(column, flex-start, center, _, 5rem);
+    @include newsBlog(tablet) {
+      gap: 1.5rem;
+    }
+    @include backgroundGradient;
+    .main {
+      @include boldHeader;
+      font-size: $font-header;
+      @include newsBlog(tablet) {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+    .alternatives {
+      width: 80%;
+      @include flex(column, flex-start, center, _, 2rem);
+      @include newsBlog(tablet) {
+        gap: 1rem;
+        width: 100%;
+      }
+      li {
+        width: 100%;
+        padding: $input-padding;
+        @include boldHeader;
+        border-radius: $rounded-border;
+        @include newsBlog(tablet) {
+          font-size: 1.1rem;
+          letter-spacing: 1.2px;
+        }
+        background: linear-gradient(
+          to right,
+          rgb(233, 94, 186),
+          rgb(233, 57, 174)
+        );
+        color: #fff;
+        cursor: pointer;
+        transition: 0.5s all;
+        &:hover {
+          transform: translate(-0.2rem, -0.5rem);
+        }
+      }
+      .wrong,
+      .correct {
+        width: 100%;
+        height: 100%;
+        color: white;
+        background: linear-gradient(
+          to right,
+          rgba(201, 54, 54, 0.836),
+          rgba(235, 24, 24, 0.932)
+        );
+      }
+      .correct {
+        background: linear-gradient(
+          to right,
+          rgba(101, 201, 54, 0.836),
+          rgba(41, 240, 23, 0.932)
+        );
+      }
+      .opacity {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  @include flex(row, center, space-between);
+  .button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .timer,
+  .button {
+    border-radius: $rounded-border;
+    padding: $input-padding;
+    @include backgroundGradient();
+    @include boldHeader();
+    color: #fff;
+    // width: 100%;
+    @include newsBlog(tablet) {
+      font-size: 1.1rem;
+    }
+  }
+}
+.over {
+  position: absolute;
+  width: 70%;
+  height: 40%;
+  @include backgroundGradient();
+  z-index: 3;
+  .gameOver {
+    width: 100%;
+    height: 100%;
+    @include flex(column, center, center, center, 2rem);
+    position: relative;
+    .close {
+      position: absolute;
+      top: -5%;
+      right: -4%;
+      border: none;
+      background: none;
+      @include boldHeader();
+      cursor: pointer;
+      width: 2.5rem;
+      img {
+        @include fullImage;
+      }
+      svg {
+        path {
+          font-size: 10rem;
+          color: white;
+        }
+      }
+    }
+    .scoreBoard {
+      width: 100%;
+      margin: 0 auto;
+      @include flex(column, center, center, _, 2rem);
+      font-size: $font-header;
+      p {
+        color: #fff;
+      }
+      .gradientText {
+        background: linear-gradient(
+          to right,
+          rgb(255, 255, 255),
+          rgb(221, 211, 211)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}
+.button {
+  display: inline-block;
+  padding: $input-padding;
+  border: none;
+  background: none;
+  border-radius: $rounded-border;
+  background: linear-gradient(to right, rgb(76, 76, 212), rgb(137, 137, 245));
+  color: rgba(255, 255, 255, 0.774);
+  cursor: pointer;
+}

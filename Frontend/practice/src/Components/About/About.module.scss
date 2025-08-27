@@ -1,0 +1,53 @@
+@import '../../Sass/mixins';
+.about {
+  @include flex(column, flex-start, center, _, 2rem);
+  width: 100vw;
+}
+
+.content {
+  margin: $padtop;
+  // @include flex(column, flex-start, center, _, 5rem);
+}
+
+.play {
+  width: 100%;
+  height: 100%;
+  @include flex(column, center, center, center);
+  .content {
+    // margin-top: 50rem;
+    width: 70%;
+    @include flex(column, center, center, _, 2rem);
+    @include newsBlog(tablet) {
+      width: 100%;
+    }
+    @include newsBlog(phone) {
+      width: 100%;
+      margin-top: 0rem;
+    }
+    h1 {
+      font-size: 5rem;
+      font-weight: bold;
+      @include newsBlog(tablet) {
+        font-size: 3rem;
+      }
+      @include newsBlog(phone) {
+        font-size: 2.3rem;
+      }
+      span {
+        color: blue;
+        border-bottom: 1px dotted blue;
+      }
+    }
+    .video {
+      @include fullImage;
+      video {
+        @include fullImage;
+        border-radius: 2rem;
+      }
+    }
+  }
+}
+.below {
+  @include flex(column, flex-start, center, _, 6rem);
+  width: 100vw;
+}

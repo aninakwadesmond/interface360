@@ -1,0 +1,76 @@
+@import '../../Sass/mixins';
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   left: 0;
+//   bottom: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   @include overlay;
+// }
+.container {
+  @include newsBlog(gridContainer) {
+    width: 90%;
+  }
+  .close {
+    @include closeButtonClick();
+  }
+  @include flex(column, flex-start, center, _, 2rem);
+  background-color: $bgnews;
+  // width: 80vw;
+  border-radius: $border-radius-small;
+  padding: $padtop;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  .content {
+    width: 95%;
+    margin: 0 auto;
+    cursor: pointer;
+
+    @include flex(row, center, flex-start, _, 2rem);
+    .contain {
+      width: 100%;
+      @include flex(row, center, flex-start, _, 2rem);
+    }
+
+    div {
+      width: 8%;
+      img {
+        @include yourRoundedImage;
+      }
+    }
+    .textPricing {
+      width: 50%;
+      p {
+        // width: 6rem;
+        font-size: $font-size-very-small;
+        color: $tcolor;
+        font-size: 1.2rem;
+        letter-spacing: 1.2px;
+      }
+      .price {
+        font-weight: bold;
+      }
+    }
+    button {
+      margin-left: auto;
+      margin-right: 10px;
+      cursor: pointer;
+      background: none;
+      @include closeButton(_, 2rem);
+    }
+  }
+  .priceTag {
+    width: 100%;
+    @include flex(row, center, flex-end, _, 2rem);
+    font-size: $font-size-very-small;
+    .total {
+      font-weight: bold;
+    }
+  }
+}

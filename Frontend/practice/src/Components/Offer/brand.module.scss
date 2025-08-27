@@ -1,0 +1,64 @@
+@import '../../Sass/mixins';
+.brand {
+  // padding: 1.5rem;
+  border-radius: 10px;
+  // margin-top: 1rem;
+  position: relative;
+  @include fullImage;
+  .overlay {
+    position: absolute;
+    border-radius: 10px;
+    @include fullImage;
+    background: linear-gradient(
+      to bottom,
+      rgba(75, 73, 73, 0.39),
+      rgba(138, 136, 136, 0.576)
+    );
+  }
+  .image {
+    @include fullImage;
+    img {
+      @include fullImage;
+      border-radius: 10px;
+    }
+  }
+  .text {
+    @include flex(column, flex-start, center, _, 2rem);
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    z-index: 1;
+    transform: translateY(-50%);
+    h2 {
+      font-size: 3rem;
+      @include newsBlog(gridBody) {
+        font-size: 2rem;
+      }
+      @include newsBlog(phone) {
+        font-size: 1.5rem;
+      }
+      font-size: bold;
+      text-transform: uppercase;
+      // color: #fff;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.849),
+        #fffffff1
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      clip-path: text;
+    }
+    p {
+      font-size: 1.5rem;
+      color: red;
+      opacity: 0.7;
+      @include newsBlog(gridBody) {
+        font-size: 1rem;
+      }
+      @include newsBlog(phone) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

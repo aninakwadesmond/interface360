@@ -1,0 +1,72 @@
+@import '../../Sass/mixins';
+.heading {
+  width: 100%;
+  // background-color: yellow;
+  @include flex(row, center, center);
+  .header {
+    width: 100%;
+    @include flex(column, center, center, _, 1rem);
+    h1 {
+      font-size: 6rem;
+      @include newsBlog(tablet) {
+        font-size: 4rem;
+      }
+      @include newsBlog(phone) {
+        font-size: 2.7rem;
+      }
+    }
+    p {
+      font-size: 2rem;
+      opacity: 0.6;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.mainContainer {
+  width: 100vw;
+  .items {
+    width: 100vw;
+    @include grid(repeat(10, 1fr));
+    @include newsBlog(tablet) {
+      @include flex(row, center, center, _, 2rem);
+      flex-wrap: wrap;
+    }
+    // width: 100%;
+    padding: 1rem;
+    p {
+      // align-self: center;
+      justify-self: center;
+      text-align: center;
+      // width: 75%;
+      text-transform: capitalize;
+      background-color: pink;
+      padding: $input-padding;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      opacity: 0.6;
+      // @include buttonShop;
+    }
+  }
+}
+
+.card {
+  padding: 1.5rem;
+  width: 100vw;
+  @include grid(repeat(4, 1fr));
+  @include newsBlog(gridBody) {
+    @include grid(repeat(3, 1fr), 1.5rem, 1.5rem);
+  }
+  @include newsBlog(meduim) {
+    @include grid(repeat(2, 1fr), 2rem, 2rem);
+  }
+  @include newsBlog(phoneGrid) {
+    @include grid(repeat(2, 1fr), 1rem, 1rem);
+  }
+  @include newsBlog(verySmall) {
+    @include grid(repeat(1, 1fr), 1rem, 1rem);
+  }
+}

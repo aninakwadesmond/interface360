@@ -1,0 +1,32 @@
+@import '../../Sass/mixins';
+.starRating {
+  @include flex(row, center, center, _, 0.5rem);
+  .starContainer {
+    @include flex(row, center, center, _, 2rem);
+
+    .star {
+      cursor: pointer;
+    }
+    .rateNumber {
+      color: red;
+    }
+  }
+  .noGap {
+    // @include flex(row, center, center, _, 1rem);
+    gap: 0rem;
+  }
+}
+.starColor {
+  path {
+    svg {
+      color: white;
+    }
+  }
+  .yellow {
+    display: inline-block;
+    width: 2rem;
+    img {
+      @include fullImage;
+    }
+  }
+}

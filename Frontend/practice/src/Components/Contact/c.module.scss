@@ -1,0 +1,177 @@
+@import '../../Sass/mixins';
+
+.Visit {
+  width: 100vw;
+  height: 100%;
+  padding: $padtop 3rem;
+  // @include flex(row, center, flex-start, _, 4rem);
+  @include grid(repeat(2, 1fr), 1rem, 1rem);
+  @include newsBlog(tablet) {
+    @include grid(repeat(1, 1fr), 5rem, 2rem);
+  }
+  .content {
+    @include flex(column, flex-start, center, _, 1rem);
+    @include newsBlog(tablet) {
+      margin-bottom: 3rem;
+    }
+    p {
+      font-size: 1rem;
+      opacity: 0.5;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+      @include newsBlog(tablet) {
+        font-size: 1.3rem;
+      }
+    }
+    .actions {
+      @include flex(column, flex-start, center, _, 1rem);
+      width: 100%;
+      div {
+        @include flex(row, center, flex-start, _, 2rem);
+      }
+    }
+  }
+}
+.map {
+  width: 100%;
+  height: 100%;
+
+  div {
+    @include fullImage;
+    iframe {
+      @include fullImage;
+    }
+  }
+}
+.shield {
+  width: 90vw;
+  // margin: $padtop 3rem;
+  margin: 4rem auto;
+  @include flex(row, flex-start, center);
+  @include newsBlog(tablet) {
+    @include grid(1fr, 1rem, 2rem);
+  }
+  border: 1px solid grey;
+  padding: $padtop;
+  .containerForm {
+    width: 70%;
+    @include newsBlog(tablet) {
+      width: 100%;
+      margin: 0 auto;
+    }
+    form {
+      .head {
+        @include flex(column, flex-start, center, 4rem);
+        margin-bottom: 2rem;
+        // background-color: blue;
+
+        p {
+          margin-bottom: 2rem;
+          opacity: 0.4;
+          font-size: 1.5rem;
+          // color: rgba(219, 30, 30, 0.651);
+          @include newsBlog(tablet) {
+            font-size: 1rem;
+          }
+        }
+        h2 {
+          font-size: 3rem;
+          font-weight: bold;
+          @include newsBlog(tablet) {
+            font-size: 2rem;
+          }
+        }
+      }
+      div {
+        @include flex(column, flex-start, center, _, 3rem);
+        width: 80%;
+        @include newsBlog(tablet) {
+          width: 85%;
+          align-items: center;
+        }
+        input,
+        textarea {
+          width: 100%;
+          padding: 1.5rem;
+          border-radius: 10px;
+          font-size: 1.5rem;
+          @include newsBlog(tablet) {
+            padding: 1rem;
+            font-size: 1rem;
+          }
+        }
+        .textArea {
+          height: 15rem;
+          width: 100%;
+          resize: none;
+          margin-bottom: 2rem;
+          @include newsBlog(tablet) {
+            height: 12rem;
+          }
+        }
+      }
+    }
+    button {
+      @include buttonShop;
+    }
+  }
+}
+.comments {
+  @include flex(column, flex-start, flex-start, _, 2rem);
+  height: 70vh;
+
+  border-left: 1px solid black;
+
+  width: 30%;
+  @include newsBlog(tablet) {
+    width: 100%;
+    height: 100%;
+    // @include flex(row, center, space-between);
+    // border-left: none;
+    @include grid(1fr, 1rem, 2rem);
+  }
+  .imageContainer {
+    @include flex(row, center, flex-start, _, 2rem);
+    // @include newsBlog(tablet) {
+    //   width: 100%;
+    //   @include flex(column, flex-start, center);
+    // }
+    margin-left: 1rem;
+    padding: 1rem;
+    width: 100%;
+    .image {
+      width: 80%;
+      @include newsBlog(verySmall) {
+        width: 18rem;
+      }
+      img {
+        @include yourRoundedImage;
+      }
+    }
+    .details {
+      @include flex(column, flex-start, center, _, 0.5rem);
+      h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 1.1px;
+      }
+      p {
+        font-size: 1rem;
+        opacity: 0.5;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.contact {
+  // background-color: red;
+  height: 100%;
+  width: 100%;
+  @include newsBlog(phone) {
+    @include grid(2, 1fr);
+  }
+}

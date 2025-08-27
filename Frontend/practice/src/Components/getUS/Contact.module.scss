@@ -1,0 +1,69 @@
+@import '../../Sass//mixins';
+@import '../../Sass//variable';
+.deal {
+  .button {
+    @include closeButtonClick();
+  }
+  @include newsBlog(tablet) {
+    width: 80%;
+  }
+  @include newsBlog(phone) {
+    width: 90%;
+  }
+  @include positionAbsolute();
+  @include flex(column, flex-start, center, _, 2.2rem);
+  padding: $big-padding;
+  border-radius: $border-radius-small;
+
+  .describeImage {
+    @include flex(row, center, flex-start, _, 2rem);
+
+    .image {
+      // width: 50%;
+      img {
+        @include fullImage();
+      }
+    }
+    div {
+      width: 100%;
+      @include flex(column, flex-start, center, _, 1rem);
+      h3 {
+        font-size: $font-meduim-small;
+        font-weight: bold;
+      }
+    }
+  }
+  .payingMethod {
+    @include flex(column, flex-start, center, _, 1rem);
+    width: 100%;
+    .payContent {
+      width: 100%;
+      @include flex(row, center, space-between);
+      select {
+        @include Select();
+        &:active {
+          outline: none;
+        }
+      }
+      .accountNumber {
+        input {
+          @include Input;
+        }
+      }
+    }
+  }
+  .quantity {
+    width: 100%;
+    @include flex(row, center, space-between);
+    input {
+      @include Input;
+      &:active {
+        outline: none;
+      }
+    }
+    p {
+      font-size: $font-size-small;
+      font-weight: bold;
+    }
+  }
+}

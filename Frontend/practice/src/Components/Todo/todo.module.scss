@@ -1,0 +1,37 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+.header {
+  background-color: $bgquizero;
+
+  width: 100%;
+  @include flex(row, center, space-between);
+  font-weight: bold;
+  .head {
+    font-size: $font-size-small;
+    @include flex(row, center, flex-start, _, 1rem);
+    padding: 1.5rem;
+    @include newsBlog(tablet) {
+      font-size: 1.4rem;
+    }
+    span {
+      color: rgba(224, 224, 224, 0.884);
+      svg {
+        path {
+          // background: linear-gradient(to 45deg, red, yellow, green);
+          // -webkit-background-clip: text;
+          // background-clip: text;
+          // color: transparent;
+          color: #e2dfdff1;
+        }
+      }
+    }
+  }
+  .share {
+    margin-right: 1rem;
+    font-size: $font-size-small;
+    font-weight: bold;
+    @include newsBlog(tablet) {
+      font-size: 1.2rem;
+    }
+  }
+}

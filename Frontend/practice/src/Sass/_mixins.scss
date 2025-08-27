@@ -1,0 +1,243 @@
+@import '../Sass/variable';
+@import '../Sass/setting';
+@mixin backgroundgradientImage($image: '../../../public/images/car1.jpg') {
+  background-image: url($image);
+  @include backgroundGradient();
+}
+@mixin backgroundGradient() {
+  background: linear-gradient(
+    to right,
+    rgba(32, 32, 32, 0.486),
+    rgba(32, 32, 32, 0.4)
+  );
+  background-position: center;
+}
+@mixin coverHeight {
+  height: 100vh;
+  width: 100vw;
+}
+
+@mixin overlay {
+  background-image: linear-gradient(
+    to right,
+    rgba(32, 32, 32, 0.486),
+    rgba(32, 32, 32, 0.4)
+  );
+}
+@mixin coverViewport {
+  height: 100vh;
+  width: 100vw;
+}
+@mixin flex(
+  $direction: row,
+  $align: center,
+  $justify: space-between,
+  $center: center,
+  $gap: 0rem
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  align-content: $center;
+  gap: $gap;
+}
+@mixin fullImage() {
+  width: 100%;
+  height: 100%;
+}
+@mixin roundImage() {
+  @include fullImage();
+  border-radius: 50%;
+}
+@mixin setInput() {
+  border: none;
+  background: none;
+  outline: none;
+  display: inline-block;
+  padding: $medium-padding;
+}
+
+@mixin grid($template: repeat(3, 1fr), $gap: 1rem, $gapr: 1rem) {
+  display: grid;
+  grid-template-columns: $template;
+  column-gap: $gap;
+  row-gap: $gapr;
+}
+
+@mixin yourRoundedImage($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+}
+@mixin closeButton($font: 3rem, $roundedPadding: 2rem) {
+  cursor: pointer;
+  background: none;
+  color: red;
+  border: none;
+  padding: 4px;
+  font-size: $font;
+  background-color: silver;
+  @include yourRoundedImage($roundedPadding, $roundedPadding);
+  @include flex(row, center, center);
+  box-shadow: 2px 2px 5px black;
+  transition: all 0.3s;
+  &:active {
+    transform: translateY(5%);
+  }
+  &:hover {
+    transform: translate(2%, 2%);
+  }
+}
+
+@mixin positionAbsolute() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  background-color: silver;
+}
+
+@mixin Select {
+  border: none;
+  outline: none;
+  padding: $small-padding;
+  border-radius: $rounded-border;
+  @include flex(row, center, center);
+}
+@mixin Input {
+  border: none;
+  padding: $small-padding;
+  border-radius: 100px;
+  outline: none;
+}
+@mixin closeButtonClick() {
+  display: block;
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  @include closeButton(3rem, 3.5rem);
+}
+
+@mixin flexPadding() {
+  padding: $input-padding;
+  @include flex(column, flex-start, flex-start, _, 2rem);
+}
+
+@mixin field() {
+  width: 100%;
+  border: none;
+  background: none;
+  display: inline-block;
+  padding: $input-padding;
+  border-radius: $rounded-border;
+  color: #e0d5d5c4;
+}
+@mixin absoluteImage($top: 80%, $right: 2%, $width: 6rem) {
+  position: absolute;
+  top: 80%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+  width: 7rem;
+  height: 7rem;
+  img {
+    @include yourRoundedImage();
+  }
+  @include newsBlog(phone) {
+    width: 3rem;
+    height: 3rem;
+    top: 90%;
+  }
+}
+@mixin button() {
+  width: 100%;
+  padding: $input-padding;
+  border-radius: $rounded-border;
+}
+@mixin button2() {
+  display: inline-block;
+  @include button();
+
+  border: none;
+  background: none;
+  background: linear-gradient(
+    to right,
+    red,
+    orangered,
+    blue,
+    pink,
+    orange,
+    yellow,
+    silver
+  );
+}
+
+@mixin boldHeader() {
+  font-size: $font-size-small;
+  font-weight: bold;
+}
+
+@mixin flexWrap() {
+  @include flex(row, center, flex-start, _, 2rem);
+  flex-wrap: wrap;
+}
+@mixin buttonShop {
+  background-color: none;
+  background: none;
+  border: none;
+  display: inline-block;
+  padding: $medium-padding;
+  font-size: 1.5rem;
+  border-radius: $rounded-border;
+  color: green;
+  background: linear-gradient(
+    to right,
+    rgba(182, 130, 35, 0.897),
+    rgb(182, 131, 35)
+  );
+  font-size: 2rem;
+}
+
+@mixin newsBlog($gridContainer) {
+  @if $gridContainer == gridContainer {
+    @media (max-width: 48em) {
+      @content;
+    }
+  }
+  @if $gridContainer == gridBody {
+    @media (max-width: 750px) {
+      @content;
+    }
+  }
+  @if $gridContainer == tablet {
+    @media (max-width: 680px) {
+      @content;
+    }
+  }
+  @if $gridContainer == meduim {
+    @media (max-width: 580px) {
+      @content;
+    }
+  }
+  @if $gridContainer == phone {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+  @if $gridContainer == phoneGrid {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
+  @if $gridContainer == verySmall {
+    @media (max-width: 370px) {
+      @content;
+    }
+  }
+  // @if $gridContainer == blog5{
+  //   @media (max-width:500px) {
+
+  //   }
+  // }
+}

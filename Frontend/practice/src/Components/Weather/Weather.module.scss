@@ -1,0 +1,63 @@
+@import '../../Sass/mixins';
+.weather {
+  @include flex(column, center, center, center, 2rem);
+  @include newsBlog(phone) {
+    padding: 1rem;
+  }
+  .location {
+    @include flex(row, center, flex-start, _, 2rem);
+    font-size: $font-size-small;
+    font-weight: bold;
+    @include newsBlog(phone) {
+      font-size: $font-meduim-small;
+
+      span {
+        color: $tcolor;
+      }
+    }
+  }
+  .search {
+    font-size: $font-meduim-small;
+    position: relative;
+    input {
+      width: 100%;
+      @include Input;
+      background: none;
+      border-bottom: 2px solid black;
+      padding: 0.45rem;
+      border-radius: 0px;
+      @include newsBlog(phone) {
+        font-size: $font-meduim-small;
+      }
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 2%;
+      @include newsBlog(phone) {
+        font-size: $font-meduim-small;
+      }
+    }
+  }
+  .condition {
+    @include flex(column, center, center, _, 2rem);
+    font-size: $font-size-small;
+    @include newsBlog(phone) {
+      font-size: $font-meduim-small;
+    }
+    p,
+    span {
+      color: $tcolor;
+    }
+    p {
+    }
+  }
+}
+
+.condi {
+  width: 4rem;
+  img {
+    @include fullImage;
+  }
+}

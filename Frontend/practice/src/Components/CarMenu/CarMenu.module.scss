@@ -1,0 +1,66 @@
+// @import '../../Sass/mixins';
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+.similarCar {
+  padding-top: $padtop;
+  width: 100%;
+  background-color: $bgquiz;
+
+  @include newsBlog(tablet) {
+    padding: 1rem;
+  }
+
+  .carSearch {
+    width: 100%;
+    @include flex(row, center, space-between);
+    h3 {
+      font-size: $font-header;
+      font-weight: bold;
+      text-align: center;
+      @include newsBlog(tablet) {
+        color: $tcolor;
+      }
+    }
+    select {
+      display: block;
+      padding: $small-padding;
+      font-weight: bold;
+      margin: 0 auto;
+      border: none;
+      border-radius: $rounded-border;
+      outline: none;
+      &:active {
+        outline: none;
+      }
+    }
+  }
+  @include flex(column, flex-start, center, _, 4rem);
+  .similarCard {
+    @include flex(column, flex-start, center, _, 2rem);
+    div {
+      @include flex(row, center, center, _, 1.5rem);
+
+      div {
+        width: 5rem;
+        img {
+          @include roundImage;
+        }
+      }
+      p {
+        font-size: $font-meduim-small;
+        font-weight: bold;
+      }
+      cursor: pointer;
+      transition: all 0.5s;
+      &:hover {
+        transform: translate(3px, 2px);
+      }
+    }
+  }
+}
+
+.carMenu {
+  @include newsBlog(tablet) {
+    color: $tcolor;
+  }
+}

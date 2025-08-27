@@ -1,0 +1,107 @@
+@import '../../Sass/mixins.scss';
+@import '../../Sass/variable';
+
+.menu {
+  @include flex(column, flex-start, flex-start, _, 2rem);
+  padding: $big-padding;
+  // padding-top: 5rem;
+  background-color: yellow;
+  width: 30%;
+  height: 100%;
+  position: fixed;
+  top: 76px;
+  left: 0;
+  bottom: 0;
+
+  // @include newsBlog(gridBody) {
+  //   width: 20%;
+  //   top: 46px;
+  // }
+  @include newsBlog(tablet) {
+    width: 100%;
+    position: fixed;
+    // top: 65.8px;
+    height: auto;
+    bottom: auto;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+    posistion: relative;
+    // @include flex(row, center, flex-start, _, 2rem);
+  }
+  h3 {
+    font-size: $font-size-small;
+    width: 100%;
+    text-align: center;
+    @include newsBlog(tablet) {
+      font-size: 1.2rem;
+    }
+  }
+  ul {
+    width: 100%;
+    @include flex(column, flex-start, center, _, 1rem);
+    @include newsBlog(tablet) {
+      @include flex(row, center, center, _, 0.2rem);
+      font-size: 1rem;
+      overflow-x: scroll;
+    }
+    li {
+      width: 100%;
+      padding: $small-padding;
+      border-radius: $rounded-border;
+      font-size: $font-size-very-small;
+      display: block;
+      cursor: pointer;
+      &:hover {
+        background-color: silver;
+      }
+    }
+  }
+  div {
+    // margin-top: 4rem;
+    cursor: pointer;
+    // width: 100%;
+    @include flex(row, center, flex-start);
+    font-size: $font-meduim-small;
+    font-weight: bold;
+    @include newsBlog(tablet) {
+      justify-content: flex-end;
+    }
+  }
+  .color {
+    @include flex(column, flex-start, center, _, 0.5rem);
+    width: 100%;
+    p {
+      @include newsBlog(tablet) {
+        font-size: 1.2rem;
+      }
+    }
+    @include newsBlog(tablet) {
+      width: 100%;
+      // @include flex(column, center, center, center);
+    }
+    .colorContainer {
+      width: 100%;
+      @include flex(row, center, flex-start, _, 0.5rem);
+      flex-wrap: wrap;
+      @include newsBlog(tablet) {
+        font-size: 1rem;
+        width: 70%;
+        @include flex(row, center, flex-start, _, 0.5rem);
+      }
+
+      span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+      }
+    }
+  }
+}
+
+.bookmark {
+  @include newsBlog(tablet) {
+    width: 100%;
+    @include flex(row, center, flex-end);
+  }
+}

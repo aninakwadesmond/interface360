@@ -1,0 +1,47 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+.nav {
+  z-index: 1;
+  margin-top: 58.21px;
+  position: fixed;
+  // background-color: blue;
+  background-color: $bgquizero;
+  width: 100vw;
+  @include flex(row, center, space-between);
+  padding: $big-padding;
+  h1 {
+    font-size: 1.4rem;
+    letter-spacing: 1.1px;
+    color: $tcolor;
+    @include newsBlog(phone) {
+      // color: red !important;
+    }
+  }
+  .search {
+    width: 40%;
+    position: relative;
+    @include flex(row, center, flex-end);
+    input {
+      width: 40%;
+      border: none;
+      border-radius: $rounded-border;
+      padding: $input-padding;
+      outline: none;
+      transition: all 0.3s;
+      // background: none;
+      cursor: pointer;
+
+      &:focus {
+        width: 100%;
+      }
+    }
+
+    &button {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  }
+}

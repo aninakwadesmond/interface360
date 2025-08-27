@@ -1,0 +1,88 @@
+@import '../../Sass/mixins';
+
+.join {
+  height: 15rem;
+  width: 100%;
+  padding: $input-padding;
+  margin-bottom: 4rem;
+  position: relative;
+  background: linear-gradient(to right, #ffffffb6, #ffffffe8);
+  background-image: url('../../../public/images/bg-4.jpg');
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+
+  @include flex(row, center, space-between);
+  @include newsBlog(tablet) {
+    @include flex(column, center, center, center, 1.2rem);
+  }
+
+  .content {
+    @include flex(column, flex-start, center, _, 1rem);
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      @include newsBlog(gridBody) {
+        font-size: 2rem;
+      }
+      @include newsBlog(phone) {
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      color: #fff;
+      opacity: 0.5;
+      @include newsBlog(gridBody) {
+        font-size: 1rem;
+      }
+      @include newsBlog(phone) {
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .form {
+    width: 40%;
+    @include newsBlog(tablet) {
+      width: 50%;
+    }
+    @include newsBlog(phone) {
+      width: 70%;
+    }
+    @include newsBlog(verySmall) {
+      width: 90%;
+    }
+
+    form {
+      width: 100%;
+      input {
+        width: 70%;
+        border: none;
+        padding: $input-padding;
+        font-size: 1.5rem;
+        outline: none;
+        @include newsBlog(tablet) {
+          width: 70%;
+        }
+        @include newsBlog(verySmall) {
+          width: 60%;
+        }
+      }
+      button {
+        width: 30%;
+        @include newsBlog(tablet) {
+          width: 30%;
+        }
+        @include newsBlog(verySmall) {
+          width: 40%;
+        }
+        border: none;
+        padding: $input-padding;
+        font-size: 1.5rem;
+        background-color: rgba(0, 128, 0, 0.753);
+        color: #ffffffc2;
+        opacity: 0.7;
+      }
+    }
+  }
+}

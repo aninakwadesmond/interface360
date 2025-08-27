@@ -1,0 +1,12 @@
+@import '../../Sass/variable';
+.addChart {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: $border-radius-small;
+  background-color: blue;
+  color: white;
+  font-size: $font-size-very-small;
+  padding: $small-padding;
+  text-align: center;
+  cursor: pointer;
+}

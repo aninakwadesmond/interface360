@@ -1,0 +1,131 @@
+@import '../../Sass/variable';
+@import '../../Sass/mixins';
+.carContent {
+  width: 100%;
+  height: calc(100vh - 7rem);
+  padding: $padtop;
+  @include flex(column, flex-start, space-between, _, 3rem);
+  @include newsBlog(tablet) {
+    gap: 2rem;
+    font-size: 90%;
+    height: 100%;
+  }
+  .carName {
+    width: 100%;
+
+    h2 {
+      font-size: $font-header;
+    }
+    @include newsBlog(tablet) {
+      font-size: 2rem;
+    }
+  }
+  .carPrice {
+    width: 100%;
+    background: linear-gradient(45deg, rgb(92, 241, 92), rgb(42, 201, 42));
+    height: 10rem;
+    padding: $big-padding;
+    margin: 0 auto;
+    text-align: center;
+    font-size: $font-size-small;
+    // background-color: red;
+    @include flex(row, center, center);
+    border-radius: $border-radius-small;
+    position: relative;
+    @include newsBlog(tablet) {
+      font-size: 2.5rem;
+      height: auto;
+    }
+    p {
+      color: $tcolor;
+    }
+
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      border-radius: $border-radius-small;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: conic-gradient(
+        from var(--angle),
+        transparent 20%,
+        rgb(49, 128, 49) // blue,
+        // red,
+        // yellow,
+        // orange,
+        // grey,
+        // pink,
+        // indigo,
+        // blue
+      );
+      padding: $small-padding;
+      animation: 5s spin linear infinite;
+      z-index: -1;
+      // z-index: -1;
+    }
+    @keyframes spin {
+      0% {
+        --angle: 0deg;
+      }
+      20% {
+        --angle: 100deg;
+      }
+      40% {
+        --angle: 150deg;
+      }
+      55% {
+        --angle: 200deg;
+      }
+      65% {
+        --angle: 230deg;
+      }
+      80% {
+        --angle: 280deg;
+      }
+      90% {
+        --angle: 320deg;
+      }
+      100% {
+        --angle: 360deg;
+      }
+    }
+  }
+
+  .operations {
+    @include flex(column, flex-start, center, _, 2rem);
+    @include newsBlog(tablet) {
+      gap: 1.5rem;
+    }
+    width: 100%;
+    button {
+      width: 80%;
+      border-radius: $rounded-border;
+      margin: 0 auto;
+      text-align: center;
+      background-color: green;
+      color: #000;
+      padding: $small-meduim-padding;
+      cursor: pointer;
+      border: none;
+      color: $tcolor;
+      letter-spacing: 1.1px;
+      @include newsBlog(tablet) {
+        font-size: 1.4rem;
+      }
+      transition: all 0.2s;
+      &:hover {
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}

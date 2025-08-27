@@ -1,0 +1,42 @@
+@import '../../Sass/mixins';
+.crazy {
+  margin-top: 4rem;
+  // margin-bottom: 4rem;
+  height: 55vh;
+  width: 100%;
+  padding: $padtop;
+  @include flex(column, flex-start, center);
+
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .content {
+    @include flex(column, flex-start, center, _, 1rem);
+    font-size: 2rem;
+    @include newsBlog(phone) {
+      font-size: 1.5rem;
+    }
+    @include newsBlog(tablet) {
+      font-size: 1.6rem;
+    }
+    opacity: 0.8;
+    color: #fff;
+    p {
+      color: #fff;
+    }
+    .textMain {
+      color: #fff;
+      font-size: 4rem;
+      letter-spacing: 1.5px;
+    }
+    button {
+      @include buttonShop;
+      @include newsBlog(phone) {
+        font-size: 1.2rem;
+      }
+      @include newsBlog(tablet) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

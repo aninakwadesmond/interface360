@@ -1,0 +1,13 @@
+@import '../../Sass//variable';
+.bottom {
+  padding: $input-padding;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    rgba(91, 226, 91, 0.726),
+    rgba(91, 226, 91, 0.904)
+  );
+  color: white;
+  border: none;
+  font-size: 1.6rem;
+}

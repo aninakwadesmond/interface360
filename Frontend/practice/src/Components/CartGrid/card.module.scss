@@ -1,0 +1,217 @@
+@import '../../Sass/mixins';
+.container {
+  width: 89vw;
+  margin: 4rem auto;
+  @include flex(column, center, center, center);
+  .content {
+    width: 100%;
+    @include grid(1fr 1.5fr 4fr 2fr 2fr 2.5fr, 2rem);
+
+    @include newsBlog(gridBody) {
+      width: 100%;
+      overflow-x: scroll;
+    }
+    @include newsBlog(tablet) {
+      @include grid(1fr 4fr 7fr 2fr 2fr 2.5fr, 2rem);
+    }
+
+    .text {
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: relative;
+      padding: 1rem;
+      @include newsBlog(phone) {
+        font-size: 1.2rem;
+      }
+      &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background-color: red;
+      }
+    }
+    .item {
+      width: 100%;
+      @include flex(column, center, center, center);
+      font-size: 1.5rem;
+      opacity: 0.7;
+      @include newsBlog(phone) {
+        font-size: 1.2rem;
+      }
+      // background-color: red;
+    }
+  }
+}
+
+.cartImage {
+  height: 4rem;
+  img {
+    @include fullImage;
+  }
+}
+.quantity {
+  width: 100%;
+  input {
+    width: 80%;
+    margin: 0 auto;
+    @include flex(column, center, center, center); // padding: $padtop;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: $input-padding;
+  }
+}
+.close {
+  padding: 0.3rem;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  border-radius: 50%;
+  background: none;
+}
+
+.payment {
+  @include flex(row, flex-start, center, _, 2rem);
+  width: 95vw;
+  margin: 20rem auto;
+  @include newsBlog(tablet) {
+    @include grid(repeat(1, 1fr), 1rem, 2rem);
+  }
+  .coupon {
+    width: 50%;
+    @include newsBlog(tablet) {
+      width: 100%;
+    }
+    @include flex(column, flex-start, center, _, 1rem);
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+    }
+    div {
+      width: 70%;
+
+      input,
+      button {
+        padding: $input-padding;
+        width: 30%;
+        display: inline-block;
+
+        //   // font-size: 1.8rem;
+        //   padding: $input-padding;
+        //   background: none;
+        //   background: linear-gradient(
+        //     to right,
+        //     rgba(28, 185, 28, 0.822),
+        //     rgba(16, 175, 16, 0.897)
+        //   );
+        //   color: #fff;
+        //   font-weight: bold;
+        //   border: none;
+        //   border-radius: 10px;
+        // }
+
+        background: none;
+
+        border-radius: 4px;
+      }
+      input {
+        width: 70%;
+        // border: none;
+      }
+      button {
+        background: linear-gradient(
+          to right,
+          rgba(28, 185, 28, 0.822),
+          rgba(16, 175, 16, 0.897)
+        );
+        border: none;
+        height: 25px;
+        // height: 100%;
+      }
+    }
+  }
+  .total {
+    width: 50%;
+    @include newsBlog(tablet) {
+      width: 100%;
+    }
+  }
+}
+
+.total {
+  padding: 1rem;
+  border: 1px solid silver;
+  @include flex(column, flex-start, center, _, 1rem);
+  h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+  }
+  .container {
+    width: 100%;
+    // background-color: blue;
+    @include flex(column, flex-start, center, _, 1rem);
+    contain: 70%;
+    p {
+      width: 100%;
+      @include flex(row, center, flex-start);
+      border-radius: 1px solid silver;
+      border: 1px solid black;
+      span {
+        width: 50%;
+        font-size: 1.4rem;
+        opacity: 0.4;
+        padding: $input-padding;
+      }
+    }
+    .cost {
+      span {
+        font-weight: bold;
+        color: black;
+        opacity: 1;
+      }
+    }
+  }
+  button {
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: $input-padding;
+    background: none;
+    background: linear-gradient(
+      to right,
+      rgba(28, 185, 28, 0.822),
+      rgba(16, 175, 16, 0.897)
+    );
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    @include newsBlog(tablet) {
+      font-size: 1.2rem;
+    }
+  }
+}
+.apply {
+  //   display: inline-block;
+  //   // font-size: 1.8rem;
+  //   padding: $input-padding;
+  //   background: none;
+  //   background: linear-gradient(
+  //     to right,
+  //     rgba(28, 185, 28, 0.822),
+  //     rgba(16, 175, 16, 0.897)
+  //   );
+  //   color: #fff;
+  //   font-weight: bold;
+  //   border: none;
+  //   border-radius: 10px;
+  // }
+  background-color: red;
+}

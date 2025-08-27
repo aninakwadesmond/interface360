@@ -1,0 +1,68 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+.details {
+  // background-color: red;
+  margin-top: 65.8px;
+  height: 100%;
+  // height: calc(100vh - 65.8px);
+  width: 100vw;
+  overflow: hidden;
+  @include newsBlog(gridBody) {
+    margin-top: 10rem;
+    width: 100%;
+    height: 100%;
+    @include grid(6fr 2fr, 4rem);
+  }
+  @include newsBlog(tablet) {
+    @include grid(1fr, _, 4rem);
+  }
+  @include grid(1.5fr 4fr 1.5fr);
+  .brands {
+    padding: $small-padding;
+    // background-color: blue;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    @include newsBlog(gridBody) {
+      display: none;
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      z-index: 3;
+    }
+  }
+  .menu {
+    width: 3rem;
+    display: none;
+    position: absolute;
+    @include newsBlog(gridBody) {
+      display: block;
+      position: absolute;
+      top: 60px;
+      left: 2px;
+      font-size: 2rem;
+      font-weight: bold;
+      // font-size: 80%;
+      z-index: 10;
+      img {
+        @include fullImage;
+      }
+    }
+  }
+  .carDetails {
+    background-color: rgba(236, 194, 201, 0.884);
+    height: 100%;
+    width: 100%;
+    @include newsBlog(tablet) {
+      height: 100%;
+    }
+  }
+  .InfoCars {
+    // background-color: yellow;
+    height: 100%;
+    width: 100%;
+    @include newsBlog(tablet) {
+      height: 100%;
+    }
+  }
+}

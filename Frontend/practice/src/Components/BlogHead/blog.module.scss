@@ -1,0 +1,39 @@
+@import '../../Sass/mixins';
+.header {
+  width: 100vw;
+  margin-top: 44px;
+  height: 50vh;
+  @include newsBlog(tablet) {
+    height: 40vh;
+  }
+  background: linear-gradient(
+    to right,
+    rgba(119, 113, 113, 0.342),
+    rgba(143, 138, 138, 0.411)
+  );
+  // url('../../../public/images/gr-7.avif');
+  // background-image: url('../../../public/images/bh-3.jpg');
+  background-position: top 40% center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  @include flex(column, center, center, center);
+  div {
+    @include flex(column, center, flex-start, _, 2rem);
+    h2 {
+      font-size: 4rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #ffffffd8, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // text-fi: text;
+      @include newsBlog(phone) {
+        font-size: 3rem;
+      }
+    }
+    p {
+      font-size: 2rem;
+      color: silver;
+      opacity: 0.4;
+    }
+  }
+}

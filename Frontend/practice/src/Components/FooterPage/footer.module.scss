@@ -1,0 +1,115 @@
+@import '../../Sass/mixins';
+
+.grid {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  @include grid(2fr 1fr 1fr 2fr);
+  @include newsBlog(gridContainer) {
+    @include flex(row, center, flex-start, _, 2rem);
+    flex-wrap: wrap;
+  }
+
+  .cara {
+    align-self: center;
+    h1 {
+      font-size: 4rem;
+      letter-spacing: 1.3px;
+      margin-bottom: 2rem;
+    }
+    div {
+      h3 {
+        margin-bottom: 1.3rem;
+      }
+      @include flex(column, flex-start, center, _, 0.5rem);
+      .follow {
+        margin-top: 1.5rem;
+        .social {
+          width: 50%;
+          // @include flex(row, center, flex-start, _, 0.2rem);
+          @include grid(repeat(4, 1fr));
+          font-size: 2rem;
+          div {
+            width: 100%;
+            img {
+              @include fullImage;
+            }
+          }
+        }
+      }
+    }
+  }
+  .about,
+  .account,
+  .contact {
+    @include flex(column, flex-start, flex-start, _, 2rem);
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      opacity: 0.6;
+    }
+    div {
+      @include flex(column, flex-start, flex-start, _, 0.3rem);
+    }
+  }
+  .contact {
+    width: 100%;
+    .install {
+      width: 100%;
+      .box {
+        width: 100%;
+        @include flex(row, center, flex-start, _, 1rem);
+
+        div {
+          height: 51px;
+          width: 100%;
+          padding: 1rem;
+          border: 1px solid #979595d7;
+          @include flex(row, center, flex-start, _, 1rem);
+          font-size: 1.5rem;
+          font-weight: bold;
+          letter-spacing: 1.3px;
+          div {
+            @include flex(column, flex-start, center);
+            border: none;
+            .shadow {
+              &:first-child {
+                font-size: 1rem;
+                opacity: 0.4;
+              }
+            }
+          }
+        }
+      }
+      .payment {
+        width: 100%;
+
+        @include flex(column, flex-start, flex-start, _1rem);
+        p {
+          opacity: 0.7;
+          margin: 1rem 0;
+        }
+        div {
+          width: 90%;
+          @include grid(repeat(4, 1fr));
+
+          div {
+            font-size: 4rem;
+            width: 100%;
+            img {
+              @include fullImage;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.copy {
+  padding: 1.5rem;
+  width: 100%;
+  @include flex(row, center, center);
+  font-size: 1.5rem;
+  font-synthesis-weight: bold;
+  opacity: 0.6;
+  letter-spacing: 1.3px;
+}

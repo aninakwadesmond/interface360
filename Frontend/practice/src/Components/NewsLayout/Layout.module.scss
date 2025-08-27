@@ -1,0 +1,418 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+@import '../../Sass//setting';
+.layout {
+  width: 100vw;
+  margin-top: 102.75px;
+  background-color: $bgnews;
+  // max-height: calc(100vh - 102.75px); // height: calc(100vh - 58.21px);
+  @include grid(1fr 3fr 1fr 2fr);
+  // @include newsBlog(gridBody) {
+  //   @include flexWrap();
+  //   // @include grid(1fr 6fr 2fr);
+  //   align-items: flex-start;
+  // }
+
+  @include newsBlog(gridContainer) {
+    display: grid;
+
+    grid-template-columns: minmax(100px, 120px) repeat(3, 1fr);
+    grid-template-areas:
+      'sidebar mainBlog mainBlog yourBlog'
+      'weatherApp weatherApp weatherApp weatherApp' 'footer footer footer footer';
+
+    // grid-te\\
+  }
+  @include newsBlog(tablet) {
+    grid-template-areas: 'sidebar mainBlog mainBlog mainBlog' 'yourBlog yourBlog weatherApp weatherApp' 'footer footer footer footer';
+  }
+  @include newsBlog(phone) {
+    grid-template-areas: 'sidebar sidebar sidebar sidebar ' 'mainBlog mainBlog mainBlog mainBlog' 'yourBlog yourBlog yourBlog yourBlog' 'weatherApp weatherApp weatherApp weatherApp';
+  }
+
+  .sideBar {
+    background-color: $bgquizero;
+    width: 100%;
+    @include flexPadding();
+
+    @include newsBlog(gridContainer) {
+      grid-area: sidebar;
+    }
+    @include newsBlog(phone) {
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    // @include newsBlog(gridBody) {
+    //   min-width: 20%;
+    //   flex: 1 1 0;
+    // }
+    .create {
+      background-color: $bgnews;
+      border-radius: $border-small-border;
+      height: 25%;
+      width: 100%;
+      @include newsBlog(phone) {
+        // width: 70%;
+        height: auto;
+        @include flex(column, center, center, center);
+      }
+      .createContainer {
+        @include flex(column, flex-start, center, _, 3rem);
+        padding-top: $font-size-small;
+        @include newsBlog(phone) {
+          gap: 0.5rem;
+          width: 80%;
+        }
+
+        .imageAdd {
+          width: 50%;
+          @include flex(column, center, center, _, 2rem);
+          margin: 0 auto;
+          @include newsBlog(phone) {
+            width: 20%;
+          }
+
+          img {
+            @include yourRoundedImage;
+          }
+        }
+        .create {
+          width: 100%;
+          @include flex(row, center, space-between);
+          padding: $medium-padding;
+          span {
+            font-size: $font-meduim-small;
+            font-weight: bold;
+            color: $tcolor;
+            letter-spacing: 1.1px;
+            @include newsBlog(tablet) {
+              font-size: 1.1rem;
+            }
+          }
+          .addBlog {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .category {
+      border-radius: $border-small-border;
+      background-color: $bgnews;
+      height: 85%;
+      width: 100%;
+      @include newsBlog(phone) {
+        height: auto;
+      }
+      h3 {
+        text-align: center;
+        padding-top: $font-size-small;
+        margin-bottom: $small-margin;
+        font-size: $font-meduim-small;
+        font-weight: bold;
+        color: $tcolor;
+      }
+      .categories {
+        width: 100%;
+        @include flex(column, flex-start, center, _, 1rem);
+        font-size: 1rem;
+        font-weight: bold;
+        @include newsBlog(phone) {
+          @include flex(row, center, flex-start, 1rem);
+          flex-wrap: wrap;
+        }
+        & > * {
+          padding: $small-padding;
+          color: $tcolor;
+          &:hover {
+            width: 100%;
+            background-color: silver;
+            border-radius: $rounded-border;
+            cursor: pointer;
+          }
+        }
+        .Bookmark {
+          width: 100%;
+          @include flex(row, center, space-between);
+          span {
+            color: $tcolor;
+            // svg {
+            //   path {
+            //     color: $tcolor;
+            //   }
+            // }
+          }
+
+          .book {
+            @include flex(row, center, flex-end);
+            cursor: pointer;
+          }
+          @include newsBlog(phone) {
+            width: auto;
+            justify-content: flex-start;
+            gap: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .main {
+    @include flexPadding();
+    width: 100%;
+    background-color: $bgquizero;
+    // height: calc(100vh - 102.75px);
+    // @include newsBlog(gridBody) {
+    //   height: 100%;
+    // }
+    // @include newsBlog(gridBody) {
+    //   min-width: 70%;
+    //   flex: 1 1 0;
+    // }
+    @include newsBlog(gridContainer) {
+      grid-area: mainBlog;
+    }
+    .mainPage {
+      .bookmark {
+        cursor: pointer;
+        color: #fff !important;
+        svg {
+          path {
+            cursor: pointer;
+            color: #fff;
+            opacity: 0.5;
+            transition: all 0.5s;
+            &:active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .mainPage,
+    .related {
+      width: 100%;
+      height: 50%;
+      // background-color: blue;
+    }
+    .related {
+      .relatedContent {
+        width: 100%;
+        height: 100%;
+        .gridContainer {
+          width: 100%;
+          height: 100%;
+          @include grid(repeat(3, 1fr), 1rem, 0rem);
+          // @include newsBlog(gridContainer) {
+          //   @include grid(repeat(2, 1fr), 1rem, 0rem);
+          //   background-color: blue !important;
+          // }
+          @include newsBlog(phoneGrid) {
+            @include grid(repeat(2, 1fr));
+          }
+
+          .div {
+            width: 100%;
+            height: 100%;
+            @include grid();
+          }
+          // background-color: green;
+        }
+        // div {
+        //   width: 100%;
+        //   height: 100%;
+        // }
+        .imageContain {
+          width: 100%;
+          position: relative;
+          .image1 {
+            @include fullImage;
+            img {
+              @include fullImage;
+            }
+            p {
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              background-color: silver;
+            }
+          }
+        }
+      }
+    }
+
+    // .mainPage {
+    //   width: 100%;
+
+    //   // z-index: -4;
+    // }
+  }
+  .myBlog {
+    padding: $input-padding;
+    width: 100%;
+    height: 100%;
+    background-color: $bgquizero;
+    display: block;
+    height: 100%;
+    // @include newsBlog(gridBody) {
+    //   // max-width: calc(100vw - 30%);
+    //   min-width: 30%;
+    //   min-height: 40vh;
+    //   flex: 1 1 0;
+    // }
+
+    .createBlog {
+      background-color: $bgnews;
+      border-radius: 10px;
+      width: 100%;
+      // div {
+      //   width: 40%;
+      //   height: 100%;
+      // }
+
+      @include grid(repeat(1, 1fr));
+      @include newsBlog(tablet) {
+        @include grid(repeat(2, 1fr));
+      }
+      // @include flex(row, center, flex-start, _, 2rem);
+      width: 100%;
+      flex-wrap: wrap;
+      // div {
+      //   width: 40%;
+      //   height: auto;
+      // }
+    }
+    @include newsBlog(gridContainer) {
+      grid-area: yourBlog;
+    }
+    // @include newsBlog(phone) {
+    //   height: 12rem;
+    // }
+  }
+  .weatherApp {
+    @include flexPadding();
+    background-color: $bgquizero;
+    // @include newsBlog(gridBody) {
+    //   @include grid(repeat(2, 1fr));
+    // @include newsBlog(gridBody) {
+    //   // max-width: calc(100vw - 30%);
+    //   max-width: 65%;
+    //   min-height: 100%;
+    //   flex: 1 1 0;
+    //   justify-content: flex-end;
+    // }
+    // }
+
+    @include newsBlog(gridContainer) {
+      grid-area: weatherApp;
+      align-self: stretch;
+      width: 100vw;
+      height: 100%;
+      @include flex(row, flex-start, space-between);
+    }
+    @include newsBlog(tablet) {
+      grid-area: weatherApp;
+      width: 100%;
+      @include flexPadding();
+    }
+
+    @include newsBlog(phone) {
+      grid-area: weatherApp;
+      width: 100vw;
+      @include flex(column, flex-start, center, _, 1rem);
+    }
+    .weather,
+    .calender {
+      // background-color: $bgquizero;
+    }
+    .weather {
+      width: 100%;
+      height: 55%;
+      background-color: $bgnews;
+      border-radius: 10px;
+      color: $tcolor;
+      svg {
+        path {
+          color: $tcolor;
+        }
+      }
+      @include flex(row, center, center, center);
+      @include newsBlog(gridContainer) {
+        grid-area: weather;
+        width: 45%;
+      }
+
+      @include newsBlog(gridContainer) {
+        height: 100%;
+      }
+      @include newsBlog(tablet) {
+        width: 100%;
+      }
+    }
+    .calender {
+      width: 100%;
+      height: 45%;
+      background-color: $bgnews;
+      border-radius: 10px;
+      color: $tcolor;
+      svg {
+        path {
+          color: $tcolor;
+        }
+      }
+      @include newsBlog(gridContainer) {
+        grid-area: calender;
+        width: 45%;
+      }
+      @include newsBlog(gridContainer) {
+        height: 100%;
+      }
+      @include newsBlog(tablet) {
+        width: 100%;
+      }
+    }
+  }
+}
+.footer {
+  color: $tcolor;
+  font-size: 1.1rem;
+  letter-spacing: 1.1px;
+  // font-weight: bold;
+  width: 100vw;
+  background-color: $bgquizero;
+  @include flex(row, center, space-between);
+  padding: $medium-padding;
+  .foot {
+    span {
+      color: $tcolor;
+
+      svg {
+        path {
+          color: $tcolor;
+        }
+      }
+    }
+    @include flex(row, center, center, _, 1rem);
+  }
+  .copyright {
+    color: $tcolor;
+  }
+  @include newsBlog(gridContainer) {
+    grid-area: footer;
+  }
+  @include newsBlog(phone) {
+    font-size: 80%;
+  }
+}
+.parent {
+  @include flex(column, flex-start, center, _, 1rem);
+}
+// .bookmark {
+//   cursor: pointer;
+//   color: red !important ;
+//   opacity: 0.9;
+// }
+.clear {
+  opacity: 1;
+}

@@ -1,0 +1,149 @@
+@import '../../Sass/mixins';
+@import '../../Sass/variable';
+
+.test {
+  margin-top: 76px;
+  padding: $content-padding;
+  @include flex(row, center, flex-start);
+  width: calc(70%);
+  @include newsBlog(tablet) {
+    margin-top: 130px;
+    width: 100%;
+    z-index: -1;
+  }
+  @include newsBlog(phone) {
+    height: calc(100vh - 20vh);
+  }
+
+  .grid {
+    height: 100%;
+    @include grid();
+    @include newsBlog(gridBody) {
+      @include grid(repeat(2, 1fr), 2rem, 2rem);
+    }
+
+    @include newsBlog(verySmall) {
+      @include grid(repeat(1, 1fr), 2rem, 2rem);
+    }
+    .card {
+      position: relative;
+      width: 100%;
+
+      border-top: $card-border-radius;
+
+      img {
+        width: 100%;
+        border-top: $card-border-radius;
+        // border-bottom: $card-border-radius;
+      }
+      .pricing {
+        @include flex(column, flex-start, center, _, 1rem);
+        width: 100%;
+        background-color: rgba(0, 128, 0, 0.404);
+        padding: $small-padding;
+        .carModel {
+          @include flex(row, center, space-between);
+          width: 100%;
+          h5 {
+            font-weight: bold;
+            font-size: $font-size-small;
+            @include newsBlog(tablet) {
+              font-size: 1.3rem;
+            }
+          }
+          p {
+            font-size: $font-size-very-small;
+            @include newsBlog(tablet) {
+              font-size: 1.1rem;
+            }
+          }
+        }
+        .priceRate {
+          @include flex(row, center, space-between);
+          width: 100%;
+          .price {
+            font-size: $font-size-very-small;
+            font-weight: bold;
+            @include newsBlog(tablet) {
+              font-size: 1rem;
+            }
+          }
+        }
+        .releaseDate {
+          @include flex(row, center, space-between);
+          width: 100%;
+          &:first-child,
+          button {
+            font-size: $font-meduim-small;
+            cursor: pointer;
+            border: none;
+            padding: $small-padding;
+            @include newsBlog(tablet) {
+              font-size: 1rem;
+            }
+          }
+          // &:last-child{
+
+          // }
+        }
+      }
+    }
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    .card::after,
+    .card::before {
+      // --angle: 0deg;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background-image: conic-gradient(
+        from var(--angle),
+        transparent 80%,
+        blue,
+        green,
+        yellow,
+        red,
+        black,
+        orangered,
+        orange,
+        blue
+      );
+      z-index: -1;
+      padding: 1.5px;
+      animation: 2s spin linear infinite;
+
+      // padding: 100px;
+    }
+    .card::before {
+      filter: blur(1.5rem);
+      opacity: 0.5;
+    }
+    @keyframes spin {
+      0% {
+        --angle: 0deg;
+      }
+      20% {
+        --angle: 50deg;
+      }
+      50% {
+        --angle: 150deg;
+      }
+      75% {
+        --angle: 300deg;
+      }
+      85% {
+        -angle: 320deg;
+      }
+      100% {
+        --angle: 360deg;
+      }
+    }
+  }
+}
