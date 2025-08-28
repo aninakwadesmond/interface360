@@ -32,46 +32,35 @@ import { loader as Eload } from './Pages/RootLayout/Ecormmence';
 import { actionShop as EAction } from './Components/Ecormmence/RootPath';
 import LoginForm from './Components/Login/LoginForm';
 
-const priceModel =
-  'https://auto.dev/api/listings?apikey=ZrQEPSkKYW5pbmFrd2FoZGVzbW9uZDNAZ21haWwuY29t&price_max=50000&year_min=2020&make=honda&city=Los%20Angeles&state=CA&location=Los%20Angeles';
-const simplified =
-  'https://auto.dev/api/listings?apikey=ZrQEPSkKYW5pbmFrd2FoZGVzbW9uZDNAZ21haWwuY29t&price_max=50000&year_min=2020&make=honda&city=Los%20Angeles';
-const named =
-  'https://auto.dev/api/listings?apikey=ZrQEPSkKYW5pbmFrd2FoZGVzbW9uZDNAZ21haWwuY29t&price_max=60000&year_min=2016&make=Audi&condition[]=used&exterior_color[]=black';
-const api = 'ZrQEPSkKYW5pbmFrd2FoZGVzbW9uZDNAZ21haWwuY29t';
-const corsProxy = 'https://thingproxy.freeboard.io/fetch/';
-const apiUrl =
-  'https://auto.dev/api/listings?apikey=YOUR_API_KEY&price_max=60000&year_min=2016&make=Audi&condition[]=used&exterior_color[]=black';
-
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      { index: true, element: <Home /> },
-      // { path: 'login', element: <Login />, action: InputForm },
-      {
-        path: 'news',
-        element: <News />,
-        // loader: Newsloader
-      },
-      { path: 'quiz', element: <Quiz /> },
-      { path: 'todo', element: <Todo />, action: TodoAction },
-    ],
-  },
-  {
-    path: '/cars',
-    element: <CarLayout />,
-    errorElement: <Error />,
-    children: [
-      {
-        index: true,
-        element: <CarsPage />,
-        loader: CarLoader,
-      },
-      { path: ':details', element: <CarDetails />, loader: similarCar },
-    ],
-  },
+  // {
+  //   path: '/',
+  //   element: <RootLayout />,
+  //   children: [
+  //     { index: true, element: <Home /> },
+  //     // { path: 'login', element: <Login />, action: InputForm },
+  //     {
+  //       path: 'news',
+  //       element: <News />,
+  //       // loader: Newsloader
+  //     },
+  //     { path: 'quiz', element: <Quiz /> },
+  //     { path: 'todo', element: <Todo />, action: TodoAction },
+  //   ],
+  // },
+  // {
+  //   path: '/cars',
+  //   element: <CarLayout />,
+  //   errorElement: <Error />,
+  //   children: [
+  // {
+  //   index: true,
+  //   element: <CarsPage />,
+  //   loader: CarLoader,
+  // },
+  //     { path: ':details', element: <CarDetails />, loader: similarCar },
+  //   ],
+  // },
   {
     path: '/shop',
     element: <RootPath />,

@@ -13,6 +13,7 @@ router.get('/', (req, res, next) => {
 router.get('/:category', (req, res, next) => {
   const { category } = req.params;
   console.log(category);
+
   db.query(
     'select * from learned where category=(?)',
     [category],
@@ -37,7 +38,6 @@ router.get('/:id/:named', (req, res, next) => {
 
 //working
 router.post('/', (req, res, next) => {
-  console.log('dominic');
   const { text, category } = req.body;
   console.log(req.body);
   console.log(text, category);
