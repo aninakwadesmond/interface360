@@ -77,7 +77,7 @@ export async function actionShop({ request, params }) {
 
   console.log(method);
 
-  const response = await fetch('http://localhost:5000/shop', {
+  const response = await fetch('https://interface360.onrender.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(dataForm),
