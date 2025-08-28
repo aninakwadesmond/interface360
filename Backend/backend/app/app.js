@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 //fetching data
 app.get('/login', (req, res) => {
   res.json(Account);
