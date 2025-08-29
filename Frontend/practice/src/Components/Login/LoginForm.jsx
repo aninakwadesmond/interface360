@@ -120,8 +120,8 @@ function FormWay() {
         <img src="../../../public/images/car15.jpg" alt="Car as logo" />
       </div>
       <div className={Style.log}>
-        <button onClick={handleLogin}>Login</button>
-        <button onClick={handleSignUp}>Sign up</button>
+        <button onClick={handleLogin}>Sign up</button>
+        <button onClick={handleSignUp}>Login</button>
       </div>
     </div>
   );
