@@ -71,9 +71,10 @@ export async function action({
   const text = await request.formData();
   const data = Object.fromEntries(text);
   console.log(data);
-  const dat = `http://localhost:5000/toLearn${
-    request.method == 'PUT' ? `` : ''
-  }`;
+  //local =>
+  //  http://localhost:5000/toLearn
+  const dat = `https://interface360.onrender.com/toLearn
+   ${request.method == 'PUT' ? `` : ''}`;
   console.log(dat);
   const response = await fetch(
     dat,

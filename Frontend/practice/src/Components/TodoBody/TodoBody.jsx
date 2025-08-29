@@ -46,7 +46,10 @@ function SideNav({ sort, setSort, share }) {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`http://localhost:5000/toLearn/${sort}`);
+      // `http://localhost:5000/toLearn/${sort}`
+      const response = await fetch(
+        `https://interface360.onrender.com/toLearn/${sort}`
+      );
       if (!response.ok) {
         return json({ message: 'Not found' }, { status: 3003 });
       } else {

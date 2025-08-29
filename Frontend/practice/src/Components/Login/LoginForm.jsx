@@ -55,7 +55,7 @@ function LoginForm() {
     if (!detail.username || !detail.password) return;
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/shop/${detail.username}/${detail.password}`
+        `https://interface360.onrender.com/shop/${detail.username}/${detail.password}`
       );
       if (!response.ok) dispatchShop({ type: 'err', payload: 'Poor network' });
       else {

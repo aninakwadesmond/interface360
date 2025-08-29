@@ -18,7 +18,9 @@ function CartTable() {
   const [run, setRun] = useState(false);
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('http://localhost:5000/shop/get');
+      const response = await fetch(
+        'https://interface360.onrender.com/shop/get'
+      );
       if (!response.ok) return json({ message: 'Error in fetch Data' });
       else {
         const responseData = await response.json();
@@ -93,13 +95,18 @@ function ItemContainer({ item, run, setRun }) {
   useEffect(() => {
     if (!close) return;
     async function fetchData() {
-      const response = await fetch(`http://localhost:5000/shop/${curItem.id}`, {
-        method: 'delete',
-      });
+      const response = await fetch(
+        `https://interface360.onrender.com/shop/${curItem.id}`,
+        {
+          method: 'delete',
+        }
+      );
       if (!response.ok) return json({ message: 'Cannot remove data' });
       else {
         const responseData = await response.json();
-        const response2 = await fetch('http://localhost:5000/shop/get');
+        const response2 = await fetch(
+          'https://interface360.onrender.com/shop/get'
+        );
         if (!response.ok) return json({ message: 'Error in fetch Data' });
         else {
           const responseData2 = await response2.json();

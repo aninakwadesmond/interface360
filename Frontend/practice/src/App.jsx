@@ -33,34 +33,34 @@ import { actionShop as EAction } from './Components/Ecormmence/RootPath';
 import LoginForm from './Components/Login/LoginForm';
 
 const router = createBrowserRouter([
-  // {
-  //   path: '/',
-  //   element: <RootLayout />,
-  //   children: [
-  //     { index: true, element: <Home /> },
-  //     // { path: 'login', element: <Login />, action: InputForm },
-  //     {
-  //       path: 'news',
-  //       element: <News />,
-  //       // loader: Newsloader
-  //     },
-  //     { path: 'quiz', element: <Quiz /> },
-  //     { path: 'todo', element: <Todo />, action: TodoAction },
-  //   ],
-  // },
-  // {
-  //   path: '/cars',
-  //   element: <CarLayout />,
-  //   errorElement: <Error />,
-  //   children: [
-  // {
-  //   index: true,
-  //   element: <CarsPage />,
-  //   loader: CarLoader,
-  // },
-  //     { path: ':details', element: <CarDetails />, loader: similarCar },
-  //   ],
-  // },
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      // { path: 'login', element: <Login />, action: InputForm },
+      {
+        path: 'news',
+        element: <News />,
+        // loader: Newsloader,
+      },
+      { path: 'quiz', element: <Quiz /> },
+      { path: 'todo', element: <Todo />, action: TodoAction },
+    ],
+  },
+  {
+    path: '/cars',
+    element: <CarLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <CarsPage />,
+        loader: CarLoader,
+      },
+      { path: ':details', element: <CarDetails />, loader: similarCar },
+    ],
+  },
   {
     path: '/shop',
     element: <RootPath />,

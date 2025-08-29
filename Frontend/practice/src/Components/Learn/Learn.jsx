@@ -75,11 +75,14 @@ function Like({ emoji, like, obj, named, check }) {
   useEffect(() => {
     async function fetchData() {
       if (count <= 0) return;
-      const response = await fetch('http://localhost:5000/toLearn/put', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ named, id: obj.id, curNumber }),
-      });
+      const response = await fetch(
+        'https://interface360.onrender.com/toLearn/put',
+        {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ named, id: obj.id, curNumber }),
+        }
+      );
       if (!response.ok) {
         return json({ message: 'Error fetch' }, { status: 400 });
       } else {
@@ -87,7 +90,7 @@ function Like({ emoji, like, obj, named, check }) {
         console.log(responseData);
         if (responseData.success) {
           const responseCall = await fetch(
-            `http://localhost:5000/toLearn/${sort}`
+            `https://interface360.onrender.com/toLearn/${sort}`
           );
           if (!response.ok) {
             return json({ message: 'A lot of data' }, { status: 304 });
@@ -106,7 +109,7 @@ function Like({ emoji, like, obj, named, check }) {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/toLearn/${obj.id}/${named}`
+        `https://interface360.onrender.com/toLearn/${obj.id}/${named}`
       );
       if (!response.ok) {
         return json({ message: 'Data not updated' }, { status: 3002 });

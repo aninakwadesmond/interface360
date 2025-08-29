@@ -34,11 +34,14 @@ function ShopCard({ allData }) {
   useEffect(() => {
     async function fetchData() {
       if (!search2) return;
-      const response = await fetch('http://localhost:5000/shop/cart', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ category, price, title, image }),
-      });
+      const response = await fetch(
+        'https://interface360.onrender.com/shop/cart',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category, price, title, image }),
+        }
+      );
       if (!response.ok)
         return json({ message: 'Error message ' }, { status: 404 });
       else {
