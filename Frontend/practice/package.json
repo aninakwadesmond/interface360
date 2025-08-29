@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "eslint.config.js",
+  "engines": {
+    "node": "18.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
@@ -13,7 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vitejs/plugin-react": "^4.7.0"
+    "@vitejs/plugin-react": "^4.7.0",
+    "@rollup/rollup-linux-x64-gnu": "^3.26.0"
   },
   "type": "module"
 }
