@@ -8,9 +8,9 @@ import ContextMain from '../ContextApr/Context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 const car2 = [
-  { id: 1, carImage: '../../../public/images/car10.jpg' },
-  { id: 2, carImage: '../../../public/images/car10.jpg' },
-  { id: 3, carImage: '../../../public/images/car10.jpg' },
+  { id: 1, carImage: './images/car10.jpg' },
+  { id: 2, carImage: './images/car10.jpg' },
+  { id: 3, carImage: './images/car10.jpg' },
 ];
 const sortContent = {
   new: '',

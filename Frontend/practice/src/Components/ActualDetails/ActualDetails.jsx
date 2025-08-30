@@ -31,7 +31,7 @@ function ActualDetails({ setOpen }) {
   const [start, setStart] = useState(0);
 
   const [currentImage, setCurrentImage] = useState('');
-  // const [image, setImage] = useState('../../../public/images/car10.jpg');
+  // const [image, setImage] = useState('./images/car10.jpg');
   useEffect(() => {}, []);
   const [rating, setRating] = useState(false);
   const { dispatch } = useContext(CarContext);
@@ -81,13 +81,13 @@ function ActualDetails({ setOpen }) {
           />
           {/* <FontAwesomeIcon icon={}
             className={Style.imageMove}
-            src="../../../public/images/car7.jpg"
+            src="./images/car7.jpg"
             alt=""
             onClick={handleMoveImageForward}
           /> */}
           {/* <img
             className={Style.imageMoveLeft}
-            src="../../../public/images/car7.jpg"
+            src="./images/car7.jpg"
             alt=""
             onClick={handleMoveImage}
           /> */}

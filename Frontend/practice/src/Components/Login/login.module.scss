@@ -3,7 +3,7 @@
 .overlay {
   width: 100vw;
   height: 100vh;
-  @include backgroundgradientImage('../../../public/Images/car3.jpg');
+  @include backgroundgradientImage('./Images/car3.jpg');
 }
 .form {
   @include flex(column, center, center, center);
@@ -74,7 +74,7 @@
         color: #fff;
 
         &[type='password']::after {
-          content: '../../../public/images/car1.jpg';
+          content: './images/car1.jpg';
           position: absolute;
           top: 0;
           right: 0;

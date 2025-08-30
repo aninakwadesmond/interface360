@@ -27,13 +27,13 @@ function Weather() {
 
   switch (cloud) {
     case 'Clouds':
-      condition = <img src="../../../public/images/cloudy.png" alt="" />;
+      condition = <img src="./images/cloudy.png" alt="" />;
       break;
     case 'Clear':
-      condition = <img src="../../../public/images/sunny.png" alt="" />;
+      condition = <img src="./images/sunny.png" alt="" />;
       break;
     default:
-      condition = <img src="../../../public/images/thunder.png" alt="" />;
+      condition = <img src="./images/thunder.png" alt="" />;
   }
   useEffect(() => {
     async function fetchData() {

@@ -34,27 +34,27 @@ function Footer() {
                 <FontAwesomeIcon icon={faTwitter} />n */}
                 <div>
                   <img
-                    src="../../../public/images/instagram.png
+                    src="./images/instagram.png
                   "
                     alt=""
                   />
                 </div>
                 <div>
                   <img
-                    src="../../../public/images/facebook.png
+                    src="./images/facebook.png
                   "
                     alt=""
                   />
                 </div>
                 <div>
                   <img
-                    src="../../../public/images/telegram.png
+                    src="./images/telegram.png
                   "
                     alt=""
                   />
                 </div>
                 <div>
-                  <img src="../../../public/images/social-media.png" alt="" />
+                  <img src="./images/social-media.png" alt="" />
                 </div>
               </div>
             </div>
@@ -108,28 +108,28 @@ function Footer() {
               <div>
                 <div>
                   <img
-                    src="../../../public/images/payment-service.png
+                    src="./images/payment-service.png
           "
                     alt=""
                   />
                 </div>
                 <div>
                   <img
-                    src="../../../public/images/card-payment.png
+                    src="./images/card-payment.png
           "
                     alt=""
                   />
                 </div>
                 <div>
                   <img
-                    src="../../../public/images/online-banking.png
+                    src="./images/online-banking.png
           "
                     alt=""
                   />
                 </div>
                 <div>
                   <img
-                    src="../../../public/images/payment-gateway.png
+                    src="./images/payment-gateway.png
           "
                     alt=""
                   />

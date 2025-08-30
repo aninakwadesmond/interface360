@@ -15,7 +15,7 @@ function Home() {
         <img src="../../public/images/car1.jpg" alt="car Image" />
       </div> */}
       <video autoPlay muted loop playsInline className={Style.video}>
-        <source src="../../../public/images/backcover.mp4" type="video/mp4" />
+        <source src="./images/backcover.mp4" type="video/mp4" />
       </video>
 
       <div className={Style.title}>
@@ -41,10 +41,10 @@ function Home() {
       </div>
 
       <div className={Style.imageMove}>
-        <img src="../../../public/images/car10.jpg" alt="" />
+        <img src="./images/car10.jpg" alt="" />
       </div>
       <div className={Style.imageMoveUp}>
-        <img src="../../../public/images/car10.jpg" alt="" />
+        <img src="./images/car10.jpg" alt="" />
       </div>
     </header>
   );

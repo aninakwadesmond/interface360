@@ -14,7 +14,7 @@ import Footer from '../FooterPage/Footer';
 function ContactItem() {
   return (
     <>
-      <BlogHeading bg={'../../../public/images/gr-4.avif'}>
+      <BlogHeading bg={'./images/gr-4.avif'}>
         <h2>#Let's_talk</h2>
         <p>Leave a message we love to hear from you</p>
       </BlogHeading>
@@ -104,7 +104,7 @@ function FormContent() {
         <Comments />
         <Comments />
         {/* <div>
-          <img src="../../../public/images/car10.jpg" alt="" />
+          <img src="./images/car10.jpg" alt="" />
           <div>
             <h3>John Doe</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
@@ -119,7 +119,7 @@ function Comments() {
   return (
     <div className={Style.imageContainer}>
       <div className={Style.image}>
-        <img src="../../../public/images/car10.jpg" alt="" />
+        <img src="./images/car10.jpg" alt="" />
       </div>
       <div className={Style.details}>
         <h3>John Doe</h3>

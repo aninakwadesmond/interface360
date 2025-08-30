@@ -215,7 +215,7 @@ function GameOver() {
       <div className={Style.gameOver}>
         <button className={Style.close} onClick={handleClose}>
           {/* <FontAwesomeIcon icon={faClose} />{' '} */}
-          <img src="../../../public/images/Cancel.png" alt="" />
+          <img src="./images/Cancel.png" alt="" />
         </button>
         <div className={Style.scoreBoard}>
           <p className={Style.gradientText}>You are a beginner</p>

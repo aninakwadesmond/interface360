@@ -15,7 +15,7 @@ function Card() {
   return (
     <div className={Style.feature}>
       <div className={Style.card}>
-        <img src="../../../public/images/car10.jpg" alt="" />
+        <img src="./images/car10.jpg" alt="" />
       </div>
       <div className={Style.title}>
         <p>lorem</p>

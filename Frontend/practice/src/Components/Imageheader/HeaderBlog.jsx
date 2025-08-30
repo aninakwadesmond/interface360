@@ -25,7 +25,7 @@ function HeaderBlog() {
 
   return (
     <>
-      <BlogHeading bg={'../../../public/images/gr-7.avif'}>
+      <BlogHeading bg={'./images/gr-7.avif'}>
         <h2>#Stay Home</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
       </BlogHeading>

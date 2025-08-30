@@ -23,9 +23,9 @@ function Details() {
       <div className={Style.menu} onClick={handleChange}>
         {/* <FontAwesomeIcon icon={faMenu} /> */}
         {open ? (
-          <img src="../../../public/images/menu.png" alt="" />
+          <img src="./images/menu.png" alt="" />
         ) : (
-          <img src="../../../public/images/close-window.png" alt="" />
+          <img src="./images/close-window.png" alt="" />
         )}
       </div>
       <div className={Style.brands} style={!open ? { display: 'block' } : {}}>

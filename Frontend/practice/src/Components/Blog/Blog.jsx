@@ -38,7 +38,7 @@ function Blog() {
           </div>
           {open ? <AddPost /> : <CreateBlog setOpen={setOpen} />}
           <div className={Style.imageCenter}>
-            <img src="../../../public/images/car10.jpg" alt="" />
+            <img src="./images/car10.jpg" alt="" />
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
   @include coverViewport();
   @include flex(column, center, center, center);
   background: linear-gradient(to right, rgb(62, 62, 83), rgb(33, 33, 54)),
-    url('../../../public/images/car6.jpg');
+    url('./images/car6.jpg');
   .fail {
     font-size: $font-header;
     font-weight: bold;

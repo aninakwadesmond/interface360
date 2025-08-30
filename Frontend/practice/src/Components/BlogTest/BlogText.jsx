@@ -7,7 +7,7 @@ function BlogText({ count = 5 }) {
     <>
       <div className={Style.blog}>
         {Array.from({ length: count }, (_, i) => i).map((el) => (
-          <BlogInfo image={'../../../public/images/sh-3.avif'} timer="13/14">
+          <BlogInfo image={'./images/sh-3.avif'} timer="13/14">
             <h2>The Cotton-jersey Zip-zip-Up handle</h2>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque

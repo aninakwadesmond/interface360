@@ -28,10 +28,7 @@ function Header() {
               }
             >
               <div className="image">
-                <img
-                  src="../../../public/images/car4.jpg"
-                  alt="car- image-logo"
-                />
+                <img src="./images/car4.jpg" alt="car- image-logo" />
               </div>
 
               <h3>DriveSafe</h3>

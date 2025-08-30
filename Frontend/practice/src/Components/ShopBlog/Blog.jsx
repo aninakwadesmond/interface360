@@ -8,7 +8,7 @@ import Pagination from '../pagination/Pagination';
 function Blog() {
   return (
     <>
-      <BlogHeading bg={'../../../public/images/gr-2.avif'}>
+      <BlogHeading bg={'./images/gr-2.avif'}>
         <h2>#readmore</h2>
         <p>Record all case studies about our products</p>
       </BlogHeading>

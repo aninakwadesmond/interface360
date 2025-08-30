@@ -56,7 +56,7 @@ function Star({ number }) {
       <div onMouseOver={setHoverImage} className={Style.starColor}>
         {starHover ? (
           <span className={Style.yellow}>
-            <img src="../../../public/images/star.png" alt="" />
+            <img src="./images/star.png" alt="" />
           </span>
         ) : (
           <FontAwesomeIcon icon={faStar} />

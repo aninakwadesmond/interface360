@@ -163,7 +163,7 @@ function CreateBlog() {
     <>
       <div className={Style.createContainer}>
         <div className={Style.imageAdd}>
-          <img src="../../../public/images/car10.jpg" alt="image circle" />
+          <img src="./images/car10.jpg" alt="image circle" />
         </div>
         <div className={Style.create}>
           <span>Create</span>
@@ -216,7 +216,7 @@ function ImageContainer() {
   return (
     <div className={Style.imageContain}>
       <div className={Style.image1}>
-        <img src="../../../public/images/car10.jpg" alt="imageContent" />
+        <img src="./images/car10.jpg" alt="imageContent" />
       </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
@@ -227,7 +227,7 @@ function ImageContainer() {
 //   return (
 //     <div className={Style.newsCard}>
 //       <div className={Style.imageBox}>
-//         <img src="../../../public/images/car2.jpg" alt="" />
+//         <img src="./images/car2.jpg" alt="" />
 //       </div>
 //       <div className={Style.imageText}>
 //         <p>

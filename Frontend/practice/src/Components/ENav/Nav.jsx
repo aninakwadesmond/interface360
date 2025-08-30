@@ -18,7 +18,7 @@ function Nav() {
           className={({ isActive }) => (isActive ? Style.active1 : undefined)}
         >
           <p>
-            <img src="../../../public/images/car2.jpg" alt="" />
+            <img src="./images/car2.jpg" alt="" />
           </p>
         </NavLink>
       </div>

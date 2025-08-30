@@ -1,6 +1,6 @@
 @import '../Sass/variable';
 @import '../Sass/setting';
-@mixin backgroundgradientImage($image: '../../../public/images/car1.jpg') {
+@mixin backgroundgradientImage($image: './images/car1.jpg') {
   background-image: url($image);
   @include backgroundGradient();
 }

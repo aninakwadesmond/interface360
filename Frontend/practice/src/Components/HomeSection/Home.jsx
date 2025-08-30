@@ -47,13 +47,13 @@ function Home() {
         <h1>New Arrival</h1>
       </Products> */}
       <div className={Style.more}>
-        <More $bgImg={'../../../public/images/bh-1.jpg'}>
+        <More $bgImg={'./images/bh-1.jpg'}>
           <p>crazy deals</p>
           <p className={Style.textMain}>buy 1 get 1 free</p>
           <p>The best classic dress is on sale at lorem</p>
           <button>learn more</button>
         </More>
-        <More $bgImg={'../../../public/images/sh-1.avif'}>
+        <More $bgImg={'./images/sh-1.avif'}>
           <p>Spring summer</p>
           <p className={Style.textMain}>Upcoming Season</p>
           <p>The best classic dress is on sale at lorem</p>
@@ -61,15 +61,15 @@ function Home() {
         </More>
       </div>
       <div className={Style.gridBrands}>
-        <Brands image={'../../../public/images/bh-1.jpg'}>
+        <Brands image={'./images/bh-1.jpg'}>
           <h2>Seasonal Sale</h2>
           <p>Lorem ipsum dolor sit amet consectetur</p>
         </Brands>
-        <Brands image={'../../../public/images/bh-1.jpg'}>
+        <Brands image={'./images/bh-1.jpg'}>
           <h2>New footware collection</h2>
           <p>Lorem ipsum dolor sit amet consectetur</p>
         </Brands>
-        <Brands image={'../../../public/images/sh-3.avif'}>
+        <Brands image={'./images/sh-3.avif'}>
           <h2>T-SHIRTS</h2>
           <p>Lorem ipsum dolor sit amet consectetur</p>
         </Brands>
@@ -119,7 +119,7 @@ function Card() {
   return (
     <div className={Style.feature}>
       <div className={Style.card}>
-        <img src="../../../public/images/car10.jpg" alt="" />
+        <img src="./images/car10.jpg" alt="" />
       </div>
       <div className={Style.title}>
         <p>lorem</p>

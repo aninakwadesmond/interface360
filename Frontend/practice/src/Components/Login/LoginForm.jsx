@@ -117,7 +117,7 @@ function FormWay() {
   return (
     <div className={Style.form}>
       <div className={`${Style.image} ${Style.width}`}>
-        <img src="../../../public/images/car15.jpg" alt="Car as logo" />
+        <img src="./images/car15.jpg" alt="Car as logo" />
       </div>
       <div className={Style.log}>
         <button onClick={handleLogin}>Sign up</button>
@@ -167,7 +167,7 @@ function FormContainer() {
     <Form method={login === 'login' ? 'post' : 'get'} className={Style.form}>
       <div className={Style.image}>
         <img
-          src="../../../public/images/car15.jpg"
+          src="./images/car15.jpg"
           alt="Car as logo"
           // onClick={dispatch({ type: 'home' })}
         />

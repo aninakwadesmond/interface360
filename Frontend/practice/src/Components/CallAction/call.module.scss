@@ -5,7 +5,7 @@
   width: 100vw;
   height: 15rem;
   @include flex(column, center, center, center);
-  background-image: url('../../../public/images/bg-5.jpg');
+  background-image: url('./images/bg-5.jpg');
   background-repeat: no-repeat;
   object-fit: cover;
   background-size: 100%;

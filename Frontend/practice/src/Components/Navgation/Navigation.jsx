@@ -14,7 +14,7 @@ function Navigation() {
   return (
     <header className={Style.Navigation}>
       <div className={Style.logo}>
-        <img src="../../../public/images/car7.jpg" alt="" />
+        <img src="./images/car7.jpg" alt="" />
         <Link to=".." relative="path" onClick={() => handleSetImage('')}>
           {/* <FontAwesomeIcon icon={faArrowLeft} /> */}
         </Link>
@@ -68,14 +68,14 @@ function Carts() {
       onClick={() => setCart((prev) => !prev)}
       className={params.details && Style.cart}
     >
-      <img src="../../../public/images/car1.jpg" alt="" />
+      <img src="./images/car1.jpg" alt="" />
       <span className={Style.itemsInChart} onClick={() => setOpenModal(false)}>
         {SelectedItem.length}
       </span>
     </div>
     // <div className={Style.cart}>
     //   <div className={Style.image}>
-    //     <img src="../../../public/images/car2.jpg" alt="" />
+    //     <img src="./images/car2.jpg" alt="" />
     //     hello
     //   </div>
     // </div>
