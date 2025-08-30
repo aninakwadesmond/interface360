@@ -48,7 +48,7 @@ function SideNav({ sort, setSort, share }) {
     async function fetchData() {
       // `http://localhost:5000/toLearn/${sort}`
       const response = await fetch(
-        `https://interface360.onrender.com/toLearn/${sort}`
+        `https://interface360-backends.onrender.com/toLearn/${sort}`
       );
       if (!response.ok) {
         return json({ message: 'Not found' }, { status: 3003 });

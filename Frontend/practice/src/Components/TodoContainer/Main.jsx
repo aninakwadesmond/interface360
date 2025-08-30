@@ -10,7 +10,9 @@ function Main() {
   useEffect(() => {
     async function fetchData() {
       // 'http://localhost:5000/toLearn'
-      const response = await fetch(`https://interface360.onrender.com/toLearn`);
+      const response = await fetch(
+        `https://interface360-backends.onrender.com/toLearn`
+      );
       if (!response.ok) {
         return json({ message: 'Data not found' }, { status: 301 });
       } else {

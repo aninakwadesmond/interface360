@@ -19,7 +19,7 @@ function CartTable() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        'https://interface360.onrender.com/shop/get'
+        'https://interface360-backends.onrender.com/shop/get'
       );
       if (!response.ok) return json({ message: 'Error in fetch Data' });
       else {
@@ -96,7 +96,7 @@ function ItemContainer({ item, run, setRun }) {
     if (!close) return;
     async function fetchData() {
       const response = await fetch(
-        `https://interface360.onrender.com/shop/${curItem.id}`,
+        `https://interface360-backends.onrender.com/shop/${curItem.id}`,
         {
           method: 'delete',
         }
@@ -105,7 +105,7 @@ function ItemContainer({ item, run, setRun }) {
       else {
         const responseData = await response.json();
         const response2 = await fetch(
-          'https://interface360.onrender.com/shop/get'
+          'https://interface360-backends.onrender.com/shop/get'
         );
         if (!response.ok) return json({ message: 'Error in fetch Data' });
         else {

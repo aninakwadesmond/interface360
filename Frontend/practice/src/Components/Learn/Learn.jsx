@@ -76,7 +76,7 @@ function Like({ emoji, like, obj, named, check }) {
     async function fetchData() {
       if (count <= 0) return;
       const response = await fetch(
-        'https://interface360.onrender.com/toLearn/put',
+        'https://interface360-backends.onrender.com/toLearn/put',
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -90,7 +90,7 @@ function Like({ emoji, like, obj, named, check }) {
         console.log(responseData);
         if (responseData.success) {
           const responseCall = await fetch(
-            `https://interface360.onrender.com/toLearn/${sort}`
+            `https://interface360-backends.onrender.com/toLearn/${sort}`
           );
           if (!response.ok) {
             return json({ message: 'A lot of data' }, { status: 304 });
@@ -109,7 +109,7 @@ function Like({ emoji, like, obj, named, check }) {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `https://interface360.onrender.com/toLearn/${obj.id}/${named}`
+        `https://interface360-backends.onrender.com/toLearn/${obj.id}/${named}`
       );
       if (!response.ok) {
         return json({ message: 'Data not updated' }, { status: 3002 });

@@ -77,11 +77,14 @@ export async function actionShop({ request, params }) {
 
   console.log(method);
 
-  const response = await fetch('https://interface360.onrender.com/shop', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(dataForm),
-  });
+  const response = await fetch(
+    'https://interface360-backends.onrender.com/shop',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dataForm),
+    }
+  );
   if (!response.ok) {
     // dispatchShop({ type: 'color', payload: 'red' });
     return;
