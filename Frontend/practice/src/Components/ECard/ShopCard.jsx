@@ -35,7 +35,7 @@ function ShopCard({ allData }) {
     async function fetchData() {
       if (!search2) return;
       const response = await fetch(
-        'https://interface360-backends.onrender.com/shop/cart',
+        'https://backend-6mq5.onrender.com/shop/cart',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
