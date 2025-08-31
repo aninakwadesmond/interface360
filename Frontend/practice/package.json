@@ -4,9 +4,10 @@
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "eslint.config.js",
   "engines": {
-    "node": "18.x",
+    "node": ">=18.18.0 <19.0.0",
     "npm": "8.x"
   },
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
