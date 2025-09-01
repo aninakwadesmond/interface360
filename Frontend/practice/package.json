@@ -25,5 +25,8 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "sass": "^1.91.0"
+  }
 }
