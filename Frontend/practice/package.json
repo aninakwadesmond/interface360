@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "overrides": {
+    "sass-embedded": {
+      "this-package-is-ignored": "true"
+    }, 
     "@rollup/rollup-linux-x64-gnu": {
       "this-package-is-ignored": "true"
     }
-  },
+  }, 
   "main": "eslint.config.js",
   "engines": {
     "node": "18.x || 20.x",
