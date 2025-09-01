@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import Style from './newsNaV.module.scss';
+import Style from './newsNavi.module.scss';
 import { useContext, useEffect, useState } from 'react';
 import { BlogContext } from '../ContextApr/BlogContext';
 import { json } from 'react-router-dom';
