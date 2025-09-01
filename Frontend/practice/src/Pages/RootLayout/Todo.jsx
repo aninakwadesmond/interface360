@@ -61,11 +61,7 @@ function Todo() {
   );
 }
 
-export async function action({
-  request,
-
-  // params,
-}) {
+export async function action({ request }) {
   // console.log(request.method);
   // console.log(request, params);
   const text = await request.formData();
@@ -73,18 +69,13 @@ export async function action({
   console.log(data);
   //local =>
   //  http://localhost:5000/toLearn
-  const dat = `https://backend-6mq5.onrender.com/toLearn
-   ${request.method == 'PUT' ? `` : ''}`;
+  const dat = `https://backend-6mq5.onrender.com/toLearn`;
   console.log(dat);
-  const response = await fetch(
-    dat,
-
-    {
-      method: request.method,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    }
-  );
+  const response = await fetch(dat, {
+    method: request.method,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
   if (!response.ok) return json({ message: 'data not found' }, { status: 300 });
   else {
     // if (request.method === 'PUT') return;

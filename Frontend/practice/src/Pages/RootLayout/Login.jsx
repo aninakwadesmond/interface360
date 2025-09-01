@@ -22,7 +22,7 @@ export async function action({ request, params }) {
   if (!data.ok) {
     throw json({ message: 'incorrect Data' }, { status: 201 });
   }
-  return redirect('/cars');
+  return;
 }
 
 export default Login;
