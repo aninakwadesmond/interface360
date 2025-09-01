@@ -10,7 +10,7 @@ import Footer from '../FooterPage/Footer';
 import Join from '../join/Join';
 import More from '../More/More';
 import Brands from '../Offer/Brands';
-import Products from '../Products/products';
+import Products from '../Products/ProductsMAin';
 import Style from './home.module.scss';
 import { Suspense } from 'react';
 

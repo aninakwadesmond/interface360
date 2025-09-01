@@ -9,7 +9,7 @@ import Pagination from '../pagination/Pagination';
 import { Suspense, useContext } from 'react';
 import Search from '../Links/Search';
 import Shop from '../ContextApr/Shop';
-import Products from '../Products/products';
+import Products from '../Products/ProductsMAin';
 
 function HeaderBlog() {
   const { shop } = useRouteLoaderData('shop-info');

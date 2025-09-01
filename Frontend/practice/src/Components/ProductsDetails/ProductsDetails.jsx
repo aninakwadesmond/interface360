@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import Footer from '../FooterPage/Footer';
 import Join from '../join/Join';
-import Products from '../Products/products';
+import Products from '../Products/ProductsMAin';
 import Style from './detail.module.scss';
 import { json } from 'react-router-dom';
 import ShopCard from '../ECard/ShopCard';
