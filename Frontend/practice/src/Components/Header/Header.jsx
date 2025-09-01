@@ -3,7 +3,7 @@ import Style from './Header.module.scss';
 import Failed from '../Failed/Failed';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faNavicon } from '@fortawesome/free-solid-svg-icons';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import Overlay from '../overlay/Overlay';
 import { BlogContext } from '../ContextApr/BlogContext';
 
