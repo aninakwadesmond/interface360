@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const router = require('./router/router');
 const routerShop = require('./router/shop');
-require('dotenv').config();
 
 const app = express();
 //port to connect;
