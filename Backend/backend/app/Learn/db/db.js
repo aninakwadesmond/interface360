@@ -16,6 +16,6 @@ const db = mysql.createPool({
 //   database: process.env.DB_NAME || 'tolearn', // Use env var, fallback for dev
 //   port: process.env.DB_PORT || 3306, // Use env var, fallback for dev
 // });
-console.log('hello', process.env.HOST);
+console.log('hell0', process.env.HOST);
 
 module.exports = db;
