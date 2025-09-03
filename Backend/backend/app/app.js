@@ -67,4 +67,5 @@ app.use((req, res, next) => {
   next();
 });
 
-http: app.listen(port, () => console.log(`Listerning to port:${port}`));
+console.log('app', process.env.name);
+app.listen(port, () => console.log(`Listerning to port:${port}`));
