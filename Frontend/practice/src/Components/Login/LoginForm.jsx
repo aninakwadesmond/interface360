@@ -55,7 +55,7 @@ function LoginForm() {
     if (!detail.username || !detail.password) return;
     async function fetchData() {
       const response = await fetch(
-        `https://backend-6mq5.onrender.com/shop/${detail.username}/${detail.password}`
+        `${import.meta.env.VITE_URL}/shop/${detail.username}/${detail.password}`
       );
       if (!response.ok) dispatchShop({ type: 'err', payload: 'Poor network' });
       else {

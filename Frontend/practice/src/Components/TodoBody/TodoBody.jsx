@@ -48,7 +48,7 @@ function SideNav({ sort, setSort, share }) {
     async function fetchData() {
       // `http://localhost:5000/toLearn/${sort}`
       const response = await fetch(
-        `https://backend-6mq5.onrender.com/toLearn/${sort}`
+        `${import.meta.env.VITE_URL}/toLearn/${sort}`
       );
       if (!response.ok) {
         return json({ message: 'Not found' }, { status: 3003 });

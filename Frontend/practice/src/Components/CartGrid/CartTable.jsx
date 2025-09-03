@@ -18,9 +18,7 @@ function CartTable() {
   const [run, setRun] = useState(false);
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(
-        'https://backend-6mq5.onrender.com/shop/get'
-      );
+      const response = await fetch(`${import.meta.env.VITE_URL}/shop/get`);
       if (!response.ok) return json({ message: 'Error in fetch Data' });
       else {
         const responseData = await response.json();
@@ -96,7 +94,7 @@ function ItemContainer({ item, run, setRun }) {
     if (!close) return;
     async function fetchData() {
       const response = await fetch(
-        `https://backend-6mq5.onrender.com/shop/${curItem.id}`,
+        `${import.meta.env.VITE_URL}/shop/${curItem.id}`,
         {
           method: 'delete',
         }
@@ -104,9 +102,7 @@ function ItemContainer({ item, run, setRun }) {
       if (!response.ok) return json({ message: 'Cannot remove data' });
       else {
         const responseData = await response.json();
-        const response2 = await fetch(
-          'https://backend-6mq5.onrender.com/shop/get'
-        );
+        const response2 = await fetch(`${import.meta.env.VITE_URL}/shop/get`);
         if (!response.ok) return json({ message: 'Error in fetch Data' });
         else {
           const responseData2 = await response2.json();

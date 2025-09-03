@@ -75,14 +75,11 @@ function Like({ emoji, like, obj, named, check }) {
   useEffect(() => {
     async function fetchData() {
       if (count <= 0) return;
-      const response = await fetch(
-        'https://backend-6mq5.onrender.com/toLearn/put',
-        {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ named, id: obj.id, curNumber }),
-        }
-      );
+      const response = await fetch(`${import.meta.env.VITE_URL}/toLearn/put`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ named, id: obj.id, curNumber }),
+      });
       if (!response.ok) {
         return json({ message: 'Error fetch' }, { status: 400 });
       } else {
@@ -90,7 +87,7 @@ function Like({ emoji, like, obj, named, check }) {
         console.log(responseData);
         if (responseData.success) {
           const responseCall = await fetch(
-            `https://backend-6mq5.onrender.com/toLearn/${sort}`
+            `${import.meta.env.VITE_URL}/toLearn/${sort}`
           );
           if (!response.ok) {
             return json({ message: 'A lot of data' }, { status: 304 });
@@ -109,7 +106,7 @@ function Like({ emoji, like, obj, named, check }) {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `https://backend-6mq5.onrender.com/toLearn/${obj.id}/${named}`
+        `${import.meta.env.VITE_URL}/toLearn/${obj.id}/${named}`
       );
       if (!response.ok) {
         return json({ message: 'Data not updated' }, { status: 3002 });

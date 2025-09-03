@@ -77,7 +77,7 @@ export async function actionShop({ request, params }) {
 
   console.log(method);
 
-  const response = await fetch('https://backend-6mq5.onrender.com/shop', {
+  const response = await fetch(`${import.meta.env.VITE_URL}/shop`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(dataForm),

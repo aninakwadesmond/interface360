@@ -69,7 +69,7 @@ export async function action({ request }) {
   console.log(data);
   //local =>
   //  http://localhost:5000/toLearn
-  const dat = `https://backend-6mq5.onrender.com/toLearn`;
+  const dat = `${import.meta.env.VITE_URL}/toLearn`;
   console.log(dat);
   const response = await fetch(dat, {
     method: request.method,

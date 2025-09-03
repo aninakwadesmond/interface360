@@ -10,7 +10,7 @@ function Main() {
   useEffect(() => {
     async function fetchData() {
       // 'http://localhost:5000/toLearn'
-      const response = await fetch(`https://backend-6mq5.onrender.com/toLearn`);
+      const response = await fetch(`${import.meta.env.VITE_URL}/toLearn`);
       if (!response.ok) {
         return json({ message: 'Data not found' }, { status: 301 });
       } else {
