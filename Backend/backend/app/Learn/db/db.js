@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
-require('dotenv').config();
-const url = `mysql://${process.env.MYSQLUER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.DATABASE}`;
+require('dotenv').config({ path: '../.env' });
+const url = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.DATABASE}`;
 
 const db = mysql.createConnection(url);
 // This code reads the connection details from environment variables
