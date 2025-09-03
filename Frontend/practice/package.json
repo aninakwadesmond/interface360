@@ -23,7 +23,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vitejs/plugin-react": "^4.7.0"
+    "@vitejs/plugin-react": "^4.7.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^6.4.0"
   },
   "devDependencies": {
     "sass": "^1.91.0"
