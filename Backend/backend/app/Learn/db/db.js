@@ -1,13 +1,8 @@
 const mysql = require('mysql2');
-require('dotenv').config({ path: `../.env` });
+require('dotenv').config();
+const url = `mysql://${process.env.MYSQLUER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.DATABASE}`;
 
-const db = mysql.createPool({
-  host: process.env.HOST || 'localhost',
-  user: process.env.USER || 'root',
-  password: process.env.PASSWORD || '@mista334',
-  database: process.env.DATABASE || 'tolearn',
-  port: process.env.PORT || 3306,
-});
+const db = mysql.createConnection(url);
 // This code reads the connection details from environment variables
 // const db = mysql.createPool({
 //   host: process.env.DB_HOST || 'localhost', // Use env var, fallback to localhost for dev
