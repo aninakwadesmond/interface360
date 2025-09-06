@@ -29,7 +29,7 @@ import Contact from './Pages/Contact';
 import CartPage from './Pages/RootLayout/CartPage';
 // import loader;
 import { loader as Eload } from './Pages/RootLayout/Ecormmence';
-import { actionShop as EAction } from './Components/Ecormmence/RootPath';
+import { action as EAction } from './Components/Ecormmence/RootPath';
 import LoginForm from './Components/Login/LoginForm';
 
 const router = createBrowserRouter([
