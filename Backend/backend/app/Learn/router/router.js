@@ -42,7 +42,7 @@ router.post('/', (req, res, next) => {
   console.log(req.body);
   console.log(text, category);
   db.query(
-    'insert into learned(te, categories) value (?, ?)',
+    'insert into learned(te, category) value (?, ?)',
     [text, category],
     (err, data) => {
       if (err) {
