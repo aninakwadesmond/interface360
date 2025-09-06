@@ -6,7 +6,7 @@ import TodoContext from '../ContextApr/TodoApi';
 import { TodoBodyContent } from '../ContextApr/TodoBody';
 import ChangeLink from '../ContextApr/Link';
 function Learn({ obj, sort }) {
-  const { text, category, liked, mindblowing, dislike } = obj;
+  const { text, categories, liked, mindblowing, dislike } = obj;
   const { getId } = useContext(TodoContext);
   // console.log(getId);
   const submitt = useSubmit();
@@ -36,7 +36,7 @@ function Learn({ obj, sort }) {
     <div className={Style.text}>
       <div className={Style.content}>
         <Text source="source">{text}</Text>
-        <Category>{category}</Category>
+        <Category>{categories}</Category>
       </div>
       <div className={Style.likes}>
         <Like

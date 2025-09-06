@@ -15,7 +15,7 @@ router.get('/:category', (req, res, next) => {
   console.log(category);
 
   db.query(
-    'select * from learned where category=(?)',
+    'select * from learned where categories=(?)',
     [category],
     (err, data) => {
       if (err) return next(err);
@@ -42,7 +42,7 @@ router.post('/', (req, res, next) => {
   console.log(req.body);
   console.log(text, category);
   db.query(
-    'insert into learned(te, category) value (?, ?)',
+    'insert into learned(te, categories) value (?, ?)',
     [text, category],
     (err, data) => {
       if (err) {
