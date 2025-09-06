@@ -160,7 +160,7 @@ function FormContainer() {
       dispatchShop({ type: 'err', payload: getMessage?.message });
     }
 
-    submit({ detail }, { method: 'get' });
+    submit({ detail }, { method: 'post' });
     // dispatch({ type: 'count' });
   }
   return (
