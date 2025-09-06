@@ -12,7 +12,7 @@ function Main() {
       // 'http://localhost:5000/toLearn'
       const response = await fetch(`${import.meta.env.VITE_URL}/toLearn`);
       if (!response.ok) {
-        return json({ message: 'Data not found' }, { status: 301 });
+        return json({ message: 'Data not found13030' }, { status: 301 });
       } else {
         const responseData = await response.json();
         dispatch({ type: 'loadData', payload: responseData });

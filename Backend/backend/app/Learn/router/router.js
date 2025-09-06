@@ -48,16 +48,16 @@ router.post('/', (req, res, next) => {
       if (err) {
         res.status(404).json({
           success: false,
-          message: 'try again',
+          message: 'unSuccessffully added',
         });
         return next(err);
       }
       // return res.json(data);
-      // return res.redirect('/toLearn');
-      res.status(200).json({
-        success: true,
-        message: 'Successffully added',
-      });
+      return res.redirect('/toLearn');
+      // res.status(200).json({
+      //   success: true,
+      //   message: 'Successffully added',
+      // });
     }
   );
 });
