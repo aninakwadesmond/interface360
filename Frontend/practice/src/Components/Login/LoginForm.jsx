@@ -132,6 +132,7 @@ function FormContainer() {
     useContext(LoginData);
   // const { dispatch, home } = useContext(Ecom);
   const result = useActionData();
+
   if (result) {
     var { success } = result;
   }
@@ -160,7 +161,7 @@ function FormContainer() {
       dispatchShop({ type: 'err', payload: getMessage?.message });
     }
 
-    submit({ detail }, { method: 'post' });
+    submit({ detail }, { method: 'get' });
     // dispatch({ type: 'count' });
   }
   return (

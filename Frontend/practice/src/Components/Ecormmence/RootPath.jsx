@@ -67,7 +67,7 @@ function RootPath() {
   );
 }
 
-export async function actionShop({ request, params }) {
+export async function action({ request, params }) {
   console.log('helldo');
   console.log(request.method);
   const data = await request.formData();
