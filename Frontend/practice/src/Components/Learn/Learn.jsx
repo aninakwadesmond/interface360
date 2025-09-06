@@ -159,7 +159,7 @@ function Category({ children }) {
   return (
     <div>
       <p className={Style.type}>
-        <Button type={children.toLowerCase()}>{children}</Button>
+        <Button type={children?.toLowerCase()}>{children}</Button>
       </p>
     </div>
   );
