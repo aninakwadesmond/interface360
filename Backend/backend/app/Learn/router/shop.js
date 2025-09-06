@@ -2,7 +2,7 @@ const { Router } = require('express');
 const routerShop = Router();
 const db = require('../db/db');
 
-routerShop.post('/', (req, res, next) => {
+routerShop.post('/:details', (req, res, next) => {
   console.log('helloShop');
   const { username, email, password } = req.body;
   if (!username || !email || !password) {
