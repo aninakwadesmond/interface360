@@ -45,9 +45,19 @@ router.post('/', (req, res, next) => {
     'insert into learned(te, category) value (?, ?)',
     [text, category],
     (err, data) => {
-      if (err) return next(err);
+      if (err) {
+        res.status(404).json({
+          success: false,
+          message: 'try again',
+        });
+        return next(err);
+      }
       // return res.json(data);
-      return res.redirect('/toLearn');
+      // return res.redirect('/toLearn');
+      res.status(200).json({
+        success: true,
+        message: 'Successffully added',
+      });
     }
   );
 });
