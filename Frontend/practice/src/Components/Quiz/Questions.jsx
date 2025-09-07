@@ -30,7 +30,7 @@ function Welcome() {
     <div className={Style.container}>
       <div className={Style.welcome}>
         <video
-          src="./images/back.mp4"
+          src="/images/back.mp4"
           autoPlay
           muted
           loop

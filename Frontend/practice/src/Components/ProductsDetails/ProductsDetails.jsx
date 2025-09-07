@@ -111,10 +111,10 @@ function Details() {
           )}
 
           {/* <div>
-            <img src="./images/bh-2.jpg" alt="carImage" />
+            <img src="/images/bh-2.jpg" alt="carImage" />
           </div>
           <div>
-            <img src="./images/bh-2.jpg" alt="carImage" />
+            <img src="/images/bh-2.jpg" alt="carImage" />
           </div> */}
         </div>
       </div>

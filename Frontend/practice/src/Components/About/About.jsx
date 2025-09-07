@@ -8,11 +8,11 @@ import Style from './About.module.scss';
 function About() {
   return (
     <div className={Style.about}>
-      <BlogHeading bg={'./images/gr-3.avif'}>
+      <BlogHeading bg={'/images/gr-3.avif'}>
         <h2>#AboutUs</h2>
       </BlogHeading>
       <div className={Style.content}>
-        <BlogInfo image={'./images/bg-1.jpg'}>
+        <BlogInfo image={'/images/bg-1.jpg'}>
           <h2>Who We Are ? </h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque
@@ -54,7 +54,7 @@ function Download() {
             autoPlay
             // controls
             loop
-            src="./images/nature.mp4"
+            src="/images/nature.mp4"
           ></video>
         </div>
       </div>
