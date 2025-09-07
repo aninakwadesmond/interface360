@@ -63,12 +63,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/shop',
-    action: EAction,
     element: <RootPath />,
     children: [
       {
         path: '',
         loader: Eload,
+        action: EAction,
         id: 'shop-info',
         children: [
           // { index: true, element: <LoginForm />, action: actionL },
