@@ -147,7 +147,7 @@ function Card({ car }) {
             </div>
             <div className={Style.priceRate}>
               <span className={Style.price}>{`${price} USD`}</span>{' '}
-              <StarRating noGap={0} />
+              <StarRating noGap={1} />
             </div>
             <div className={Style.releaseDate}>
               <span>

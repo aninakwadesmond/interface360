@@ -12,14 +12,17 @@
   @include newsBlog(tablet) {
     // justify-content: flex-start;
     // gap: 2rem;
+    z-index: 10;
   }
   .logo {
     width: 8rem;
     @include newsBlog(tablet) {
       width: 4rem;
     }
-    img {
-      @include roundImage;
+    a {
+      img {
+        @include roundImage;
+      }
     }
   }
   .input {

@@ -4,5 +4,10 @@
   @include flex(row, _, flex-end);
   position: relative;
   height: 100vh;
+
   // margin-top: 87rem;
+  @include newsBlog(tablet) {
+    display: block;
+    height: 100%;
+  }
 }

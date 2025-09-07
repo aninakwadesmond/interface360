@@ -5,7 +5,7 @@
   @include flex(column, flex-start, flex-start, _, 2rem);
   padding: $big-padding;
   // padding-top: 5rem;
-  background-color: yellow;
+  background-color: rgb(150, 148, 148);
   width: 30%;
   height: 100%;
   position: fixed;
@@ -20,12 +20,13 @@
   @include newsBlog(tablet) {
     width: 100%;
     position: fixed;
-    // top: 65.8px;
+    top: 46px;
     height: auto;
     bottom: auto;
     gap: 0.2rem;
     flex-wrap: wrap;
     posistion: relative;
+    z-index: 10;
     // @include flex(row, center, flex-start, _, 2rem);
   }
   h3 {

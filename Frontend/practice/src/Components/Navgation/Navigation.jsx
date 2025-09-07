@@ -14,9 +14,9 @@ function Navigation() {
   return (
     <header className={Style.Navigation}>
       <div className={Style.logo}>
-        <img src="/images/car7.jpg" alt="" />
         <Link to=".." relative="path" onClick={() => handleSetImage('')}>
           {/* <FontAwesomeIcon icon={faArrowLeft} /> */}
+          <img src="/images/car7.jpg" alt="" />
         </Link>
       </div>
       {!params?.details && (

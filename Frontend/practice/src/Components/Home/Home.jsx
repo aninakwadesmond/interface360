@@ -21,7 +21,10 @@ function Home() {
       <div className={Style.title}>
         {/* <div></div> */}
         <h2>
-          <span>You drive save .</span> <span> You save tommorrow</span>{' '}
+          <span>Ready for a Premium Experience?</span>{' '}
+          {/* <span>
+            Book your luxury car service today and experience the difference.
+          </span>{' '} */}
         </h2>
 
         <p>
