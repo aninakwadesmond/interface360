@@ -165,7 +165,7 @@ function FormContainer() {
     // dispatch({ type: 'count' });
   }
   return (
-    <Form method={login === 'login' ? 'post' : 'get'} className={Style.form}>
+    <Form method={login == 'login' ? 'post' : 'get'} className={Style.form}>
       <div className={Style.image}>
         <img
           src="./images/car15.jpg"
