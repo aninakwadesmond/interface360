@@ -1,7 +1,7 @@
 import BlogHeading from '../BlogHead/BlogHeading';
 import BlogText from '../BlogTest/BlogText';
 import Footer from '../FooterPage/Footer';
-import HeaderBlog from './imageheader/HeaderBlog';
+import HeaderBlog from '../Imageheader/HeaderBlog';
 import Join from '../join/Join';
 import Pagination from '../pagination/Pagination';
 
