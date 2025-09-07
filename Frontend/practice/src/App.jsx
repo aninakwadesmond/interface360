@@ -63,7 +63,6 @@ const router = createBrowserRouter([
   },
   {
     path: '/shop',
-
     action: EAction,
     element: <RootPath />,
     children: [
